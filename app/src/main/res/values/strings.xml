@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="notice_terms_of_use">
+        Thank you for enrolling in trainings with CodePlay Studio.\n
+        \nThis app is developed for training purpose used in Android Development training conducted
+        by CodePlay Studio, lisenced under the Apache License, Version 2.0 (the "License"); You may
+        not use this app except in compliance with the License. You may obtain a copy of the License
+        at\n\n\t\t\thttp://www.apache.org/licenses/LICENSE-2.0
+        \n\nThe source code is provided "AS IS". Any expressed or implied warranties, including,
+        but not limited to, the implied warranties of merchantability and fitness for a particular
+        purpose are disclaimed. In no event shall the copyright holder be liable for any direct,
+        indirect, incidental, special, exemplary, or consequential damages (Including, but not limited to,
+        procurement of goods or services; loss of use, data, or profits; or business interruption)
+        however caused and on any theory of liability, whether in contract, strict liability, or tort
+        (Including negligence or otherwise) arising in any way out of the use of this source code,
+        even if advised of the possibility of such damage.
+        \n\nRedistribution and use in source and binary forms, with or without modification,
+        are permitted provided that the above copyright notice and disclaimer are retained in the
+        redistributions of source code or reproduced in the documentation and/or other materials provided
+        with the redistributions in binary form.
+    </string>
+    <string name="copyright">Copyright &#169; 2017 CodePlay Studio. %s</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="widgets">Widgets (Views)</string>
+    <string name="layouts">Layouts (ViewGroups)</string>
+    <string name="tablayout">Tab Layout</string>
+    <string name="tablayout_desc_short">A horizontal layout to display tabs.</string>
+</resources>
