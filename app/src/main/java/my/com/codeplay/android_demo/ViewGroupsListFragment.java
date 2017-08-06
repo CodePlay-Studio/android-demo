@@ -75,10 +75,14 @@ public class ViewGroupsListFragment extends ListFragment {
                 ViewGroupsActivity.class, R.layout.activity_linearlayout));
         itemList.add(new ViewGroupItem(0, R.string.scrollview, R.string.scrollview_short_desc,
                 ViewGroupsActivity.class, R.layout.activity_scrollview));
+        itemList.add(new ViewGroupItem(0, R.string.tablelayout, R.string.tablelayout_short_desc,
+                ViewGroupsActivity.class, R.layout.activity_tablelayout));
         itemList.add(new ViewGroupItem(0, R.string.gridlayout, R.string.gridlayout_short_desc,
                 ViewGroupsActivity.class, R.layout.activity_gridlayout));
         itemList.add(new ViewGroupItem(0, R.string.coordinatorlayout, R.string.coordinatorlayout_short_desc,
                 ViewGroupsActivity.class, R.layout.activity_coordinatorlayout));
+        itemList.add(new ViewGroupItem(0, R.string.slidingdrawer, R.string.slidingdrawer_short_desc,
+                ViewGroupsActivity.class, R.layout.activity_sliding_drawer));
         itemList.add(new ViewGroupItem(R.drawable.ic_tabs, R.string.tablayout,
                 R.string.tablayout_desc_short, TabLayoutActivity.class, 0));
         itemList.add(new ViewGroupItem(R.drawable.ic_viewflipper_black_48dp, R.string.viewflipper,

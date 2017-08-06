@@ -42,6 +42,10 @@
     <string name="linearlayout_short_desc">A layout to display its children in a single order (horizontal or vertical).</string>
     <string name="scrollview">ScrollView</string>
     <string name="scrollview_short_desc">A layout that allows the view hierarchy placed within it to be scrolled when the hierarchy is beyond its own bound.</string>
+    <string name="tablelayout">TableLayout</string>
+    <string name="tablelayout_short_desc">A layout that arranges its childrens into rows and columns.</string>
+    <string name="tabular_data">Tabular data</string>
+    <string name="simple_form">Simple form</string>
     <string name="gridlayout">GridLayout (API 14)</string>
     <string name="gridlayout_short_desc">A layout that places its childrens in rectangular grid.</string>
     <string name="coordinatorlayout">CoordinatorLayout (API 21)</string>
@@ -57,6 +61,8 @@
         although most Android devices ultimately ship with both open source and proprietary software,
         including required proprietary components for Google\'s services.
     </string>
+    <string name="slidingdrawer">SlidingDrawer (Deprecated from API 17 onwards)</string>
+    <string name="slidingdrawer_short_desc">A layout that hides content out of the screen.</string>
     <string name="tablayout">Tab Layout</string>
     <string name="tablayout_desc_short">A horizontal layout to display tabs.</string>
     <string name="viewflipper">ViewFlipper</string>

@@ -21,6 +21,8 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
+import android.widget.SlidingDrawer;
 
 import my.com.codeplay.android_demo.R;
 
@@ -43,12 +45,18 @@ public class ViewGroupsActivity extends AppCompatActivity {
             case R.layout.activity_scrollview:
                 labelId = R.string.scrollview;
                 break;
+            case R.layout.activity_tablelayout:
+                labelId = R.string.tablelayout;
+                break;
             case R.layout.activity_gridlayout:
                 labelId = R.string.gridlayout;
                 break;
             case R.layout.activity_coordinatorlayout:
                 setTheme(R.style.AppTheme_NoActionBar);
                 labelId = R.string.coordinatorlayout;
+                break;
+            case R.layout.activity_sliding_drawer:
+                labelId = R.string.slidingdrawer;
                 break;
         }
 
@@ -71,6 +79,23 @@ public class ViewGroupsActivity extends AppCompatActivity {
                     } else {
                         collapsingToolbarLayout.setTitle("");
                     }
+                }
+            });
+        }
+
+        SlidingDrawer slidingDrawer = (SlidingDrawer) findViewById(R.id.slidingdrawer);
+        if (slidingDrawer!=null) {
+            final ImageView ivHandler = (ImageView) findViewById(R.id.handle);
+            slidingDrawer.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener() {
+                @Override
+                public void onDrawerOpened() {
+                    ivHandler.setImageResource(R.drawable.ic_arrow_down_black_48dp);
+                }
+            });
+            slidingDrawer.setOnDrawerCloseListener(new SlidingDrawer.OnDrawerCloseListener() {
+                @Override
+                public void onDrawerClosed() {
+                    ivHandler.setImageResource(R.drawable.ic_arrow_up_black_48dp);
                 }
             });
         }
