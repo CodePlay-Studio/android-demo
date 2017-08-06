@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import my.com.codeplay.android_demo.notifications.NotificationsFragment;
 import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
 import my.com.codeplay.android_demo.views.ViewsFragment;
 
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case R.id.viewgroups:
                         fragment = ViewGroupsListFragment.newInstance();
+                        break;
+                    case R.id.notifications:
+                        fragment = NotificationsFragment.newInstance();
                         break;
                 }
 

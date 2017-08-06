@@ -67,4 +67,27 @@
     <string name="gridview_short_desc">A layout displays items in two-dimensional scrollable grid.</string>
     <string name="recyclerview">RecyclerView (API 21)</string>
     <string name="recyclerview_short_desc">A more advanced and flexible ListView/GridView designed for displaying large data sets efficiently.</string>
+    <string name="notifications">Notifications</string>
+    <string name="toast">Toast</string>
+    <string name="toast_msg">This is a Toast message</string>
+    <string name="toast_desc">A simple, unobtrusive message in a small popup near the bottom of the screen,
+        centered horizontally by default. Usually used in a response to an action or operation a user has
+        performed and automatically disappear after a timeout.</string>
+    <string name="snackbar">Snackbar (API 21)</string>
+    <string name="snackbar_button">Snackbar</string>
+    <string name="snackbar_msg">This is a Snackbar message</string>
+    <string name="snackbar_desc">Provide brief feedback that contain very short text and a single text action at the bottom of the screen.</string>
+    <string name="dialog">Dialog</string>
+    <string name="dialog_desc">A dialog is a small window that prompts user to make a decision, selection, or enter additional information.
+        Normally used for modal events that require users to take an action before they can proceed.</string>
+    <string name="dialog_norm">Normal</string>
+    <string name="dialog_list">List</string>
+    <string name="notification">Notification</string>
+    <string name="notification_desc">An user interface element that display outside an app to indicate an event has occurred which user can view and respond to it by dragging down the status bar to open the notification drawer.</string>
+    <string name="notify">Notify</string>
+    <string name="animations">Animations</string>
+    <string name="components">Components</string>
+    <string name="multimedia">Multimedia</string>
+    <string name="network_operation">Network Operation</string>
+    <string name="database">Database</string>
 </resources>

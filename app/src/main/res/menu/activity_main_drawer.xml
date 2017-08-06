@@ -27,6 +27,30 @@
                     android:id="@+id/viewgroups"
                     android:icon="@drawable/ic_relativelayout_black_24dp"
                     android:title="@string/layouts"/>
+                <item
+                    android:id="@+id/notifications"
+                    android:icon="@drawable/ic_notifications_black_24dp"
+                    android:title="@string/notifications"/>
+                <item
+                    android:id="@+id/animation"
+                    android:icon="@drawable/flyingloop0002"
+                    android:title="@string/animations"/>
+                <item
+                    android:id="@+id/components"
+                    android:icon="@drawable/ic_android_black_48dp"
+                    android:title="@string/components"/>
+                <item
+                    android:id="@+id/multimedia"
+                    android:icon="@drawable/ic_multimedia_black_24dp"
+                    android:title="@string/multimedia"/>
+                <item
+                    android:id="@+id/network"
+                    android:icon="@drawable/ic_network_black_24dp"
+                    android:title="@string/network_operation"/>
+                <item
+                    android:id="@+id/database"
+                    android:icon="@drawable/ic_storage_black_24dp"
+                    android:title="@string/database"/>
             </group>
         </menu>
     </item>
