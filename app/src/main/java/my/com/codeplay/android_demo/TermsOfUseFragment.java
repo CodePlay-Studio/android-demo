@@ -50,15 +50,18 @@ public class TermsOfUseFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        if (getActivity()!=null) {
-            String versionName = "";
+        String versionName = "";
+
+        if (getActivity() instanceof MainActivity) {
+            ((MainActivity) getActivity()).clearNavSelection();
+
             try {
                 versionName = " v" + getActivity().getPackageManager()
                         .getPackageInfo(getActivity().getPackageName(), 0).versionName;
             } catch (PackageManager.NameNotFoundException ignored) {
             }
-
-            tvCopyright.setText(getString(R.string.copyright, versionName));
         }
+
+        tvCopyright.setText(getString(R.string.copyright, versionName));
     }
 }

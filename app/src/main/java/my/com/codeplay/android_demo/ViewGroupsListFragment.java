@@ -1,0 +1,156 @@
+/*
+ * Copyright 2017 (C) CodePlay Studio. All rights reserved.
+ *
+ * All source code within this app is licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy of the
+ * License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+
+package my.com.codeplay.android_demo;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ListFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import my.com.codeplay.android_demo.objects.ViewGroupItem;
+import my.com.codeplay.android_demo.viewgroups.GridViewActivity;
+import my.com.codeplay.android_demo.viewgroups.ListViewActivity;
+import my.com.codeplay.android_demo.viewgroups.RecyclerViewActivity;
+import my.com.codeplay.android_demo.viewgroups.TabLayoutActivity;
+import my.com.codeplay.android_demo.viewgroups.ViewFlipperActivity;
+import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
+
+/**
+ * Created by Tham on 05/08/2017.
+ */
+
+public class ViewGroupsListFragment extends ListFragment {
+    private List<ViewGroupItem> itemList;
+    private FragmentEventListener callback;
+
+    public static ViewGroupsListFragment newInstance() {
+        ViewGroupsListFragment fragment = new ViewGroupsListFragment();
+        return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        try {
+            callback = (FragmentEventListener) context;
+        } catch (ClassCastException ignored) {
+        }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        itemList = new ArrayList<>();
+        itemList.add(new ViewGroupItem(0, R.string.framelayout, R.string.framelayout_short_desc,
+                ViewGroupsActivity.class, R.layout.activity_framelayout));
+        itemList.add(new ViewGroupItem(R.drawable.ic_relativelayout_black_48dp, R.string.relativelayout,
+                R.string.relativelayout_short_desc, ViewGroupsActivity.class, R.layout.activity_relativelayout));
+        itemList.add(new ViewGroupItem(R.drawable.ic_linearlayout_black_24dp, R.string.linearlayout, R.string.linearlayout_short_desc,
+                ViewGroupsActivity.class, R.layout.activity_linearlayout));
+        itemList.add(new ViewGroupItem(0, R.string.scrollview, R.string.scrollview_short_desc,
+                ViewGroupsActivity.class, R.layout.activity_scrollview));
+        itemList.add(new ViewGroupItem(0, R.string.gridlayout, R.string.gridlayout_short_desc,
+                ViewGroupsActivity.class, R.layout.activity_gridlayout));
+        itemList.add(new ViewGroupItem(0, R.string.coordinatorlayout, R.string.coordinatorlayout_short_desc,
+                ViewGroupsActivity.class, R.layout.activity_coordinatorlayout));
+        itemList.add(new ViewGroupItem(R.drawable.ic_tabs, R.string.tablayout,
+                R.string.tablayout_desc_short, TabLayoutActivity.class, 0));
+        itemList.add(new ViewGroupItem(R.drawable.ic_viewflipper_black_48dp, R.string.viewflipper,
+                R.string.viewflipper_short_desc, ViewFlipperActivity.class, 0));
+        itemList.add(new ViewGroupItem(R.drawable.ic_listview_black_48dp, R.string.listview,
+                R.string.listview_short_desc, ListViewActivity.class, 0));
+        itemList.add(new ViewGroupItem(R.drawable.ic_gridview_black_48dp, R.string.gridview,
+                R.string.gridview_short_desc, GridViewActivity.class, 0));
+        itemList.add(new ViewGroupItem(0, R.string.recyclerview, R.string.recyclerview_short_desc,
+                RecyclerViewActivity.class, 0));
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_listview, container, false);
+
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        setListAdapter(new ViewGroupListAdapter(getActivity(), itemList));
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        if (callback!=null)
+            callback.onFragmentListItemClick(itemList.get(position).getTargetComponent(),
+                    itemList.get(position).getLayoutId());
+    }
+
+    private class ViewGroupListAdapter extends ArrayAdapter {
+
+        public ViewGroupListAdapter(@NonNull Context context, @NonNull List items) {
+            super(context, 0, items);
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            ViewHolder holder;
+
+            if (convertView==null) {
+                convertView = LayoutInflater.from(getContext())
+                        .inflate(R.layout.item_viewgroup, parent, false);
+
+                holder = new ViewHolder();
+                holder.ivThumbnail = (ImageView) convertView.findViewById(R.id.image);
+                holder.tvTitle = (TextView) convertView.findViewById(R.id.title);
+                holder.tvShortDesc = (TextView) convertView.findViewById(R.id.short_desc);
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolder) convertView.getTag();
+            }
+
+            ViewGroupItem item = (ViewGroupItem) getItem(position);
+            if (item != null) {
+                holder.ivThumbnail.setImageResource(item.getThumbnailId());
+                holder.tvTitle.setText(item.getTitleId());
+                holder.tvShortDesc.setText(item.getShortDescId());
+            }
+            return convertView;
+        }
+    }
+
+    private class ViewHolder {
+        ImageView ivThumbnail;
+        TextView tvTitle;
+        TextView tvShortDesc;
+    }
+}

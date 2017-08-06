@@ -19,9 +19,31 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.SimpleCoordinatorTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
     <!-- Toolbar -->
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- GridLayout demo cell styles -->
+    <style name="CellText">
+        <item name="android:background">@drawable/cell</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    <style name="CellText.Normal">
+
+    </style>
+    <style name="CellText.PublicHoliday">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FF0000</item>
+    </style>
+    <style name="CellText.SchoolHoliday">
+        <item name="android:background">@drawable/cell_school_holiday</item>
+    </style>
+    <style name="CellText.PublicHoliday.Both">
+        <item name="android:background">@drawable/cell_school_holiday</item>
+    </style>
 
 </resources>

@@ -1,0 +1,88 @@
+/*
+ * Copyright 2017 (C) CodePlay Studio. All rights reserved.
+ *
+ * All source code within this app is licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy of the
+ * License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+
+package my.com.codeplay.android_demo.viewgroups;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import my.com.codeplay.android_demo.R;
+import my.com.codeplay.android_demo.data.Dummy;
+
+/*
+ * A ListView requests views on demand from interface {@link android.widget.ListAdapter}. The classes
+ * implemented this interface include: BaseAdapter, ArrayAdapter<T>, CursorAdapter, SimplerAdapter,
+ * SimpleCursorAdapter, etc.
+ *
+ * Standard row layout resources from android.R to use in a ListView:
+ * simple_list_item_1, simple_list_item_2, and two_line_list_item.
+ */
+public class ListViewActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_listview);
+
+        ListView listView = (ListView) findViewById(android.R.id.list);
+        listView.setAdapter(new MyAdapter());
+    }
+
+    private class MyAdapter extends BaseAdapter {
+        @Override
+        public int getCount() {
+            return Dummy.NAMES.length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolder holder;
+
+            if (convertView==null) {
+                convertView = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.item_listview, parent, false);
+
+                holder = new ViewHolder();
+                holder.image = (ImageView) convertView.findViewById(R.id.image);
+                holder.text  = (TextView) convertView.findViewById(R.id.text);
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolder) convertView.getTag();
+            }
+
+            holder.image.setImageResource(Dummy.DRAWABLES[position]);
+            holder.text.setText(Dummy.NAMES[position]);
+
+            return convertView;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2017 (C) CodePlay Studio. All rights reserved.
+  ~
+  ~ All source code within this app is licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License. You may obtain a copy of the
+  ~ License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software distributed under the
+  ~ License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+  ~ either express or implied. See the License for the specific language governing permissions
+  ~ and limitations under the License.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- Material Teal color palette -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@color/colorAccent" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#E0F2F1" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#B2DFDB" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#80CBC4" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#4DB6AC" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#26A69A" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#009688" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00897B" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp" 
+        android:background="#00796B" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp" 
+        android:background="#00695C" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#004D40" />
+    <!-- Material Indigo color palette -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="#3F51B5" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#E8EAF6" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#C5CAE9" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#9FA8DA" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#7986CB" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#5C6BC0" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#3F51B5" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#3949AB" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimaryDark" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#283593" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#1A237E" />
+</LinearLayout>

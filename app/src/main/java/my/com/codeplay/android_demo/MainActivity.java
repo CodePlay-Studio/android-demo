@@ -1,8 +1,12 @@
 package my.com.codeplay.android_demo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,23 +16,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
+import my.com.codeplay.android_demo.views.ViewsFragment;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
+        implements NavigationView.OnNavigationItemSelectedListener, FragmentEventListener {
+    private NavigationView navigationView;
     private DrawerLayout drawerLayout;
+    // keep track of the current shown fragment
+    private int curNav;
+    private boolean isDrawerItemChanged;
 
-    /*private static final int[] ICONS  = {
-            R.drawable.ic_widgets_black_24dp
-    };
-    private static final int[] LABELS = {
-            R.string.widgets,
-            R.string.layouts
-    };
-    private static final int COLUMNS = 2;
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.none);
 
@@ -57,7 +55,34 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onDrawerClosed(View drawerView) {
+                if (curNav==0 || curNav==R.id.none || !isDrawerItemChanged)
+                    return;
 
+                isDrawerItemChanged = false;
+
+                Fragment fragment = null;
+                switch (curNav) {
+                    case R.id.views:
+                        fragment = ViewsFragment.newInstance();
+                        break;
+                    case R.id.viewgroups:
+                        fragment = ViewGroupsListFragment.newInstance();
+                        break;
+                }
+
+                if (fragment!=null) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+
+                    // clear fragment history
+                    fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
+                    // and start a new fragment
+                    getSupportFragmentManager().beginTransaction()
+                            .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                            .replace(R.id.master_container, fragment)
+                            .addToBackStack(null)
+                            .commit();
+                }
             }
 
             @Override
@@ -70,27 +95,6 @@ public class MainActivity extends AppCompatActivity
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.master_container, TermsOfUseFragment.newInstance())
                 .commit();
-
-        /*
-            GridLayoutManager
-                A RecyclerView.LayoutManager implementations that lays out items in a grid.
-                By default, each item occupies 1 span. You can change it by providing a custom
-                GridLayoutManager.SpanSizeLookup instance via setSpanSizeLookup(SpanSizeLookup).
-        */
-        /*
-            public GridLayoutManager (Context context, int spanCount)
-                Creates a vertical GridLayoutManager
-
-            Parameters
-                context : Current context, will be used to access resources.
-                spanCount : The number of columns in the grid
-        */
-        // Define a layout for RecyclerView
-        /*mLayoutManager = new GridLayoutManager(this, COLUMNS);
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter = new DemosAdapter());*/
     }
 
     @Override
@@ -109,41 +113,34 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        drawerLayout.closeDrawer(GravityCompat.START);
+        int itemId = item.getItemId();
+        if (itemId==curNav) {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START))
+                drawerLayout.closeDrawer(GravityCompat.START);
+            return false;
+        }
+
+        curNav = itemId;
+        isDrawerItemChanged = true;
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START))
+            drawerLayout.closeDrawer(GravityCompat.START);
         // true to display the item as the selected item
         return true;
     }
 
-    /*private class DemosAdapter extends RecyclerView.Adapter<DemosAdapter.ViewHolder> {
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.grid_demo, parent, false);
-            ViewHolder viewHolder = new ViewHolder(view);
-            return viewHolder;
+    @Override
+    public void onFragmentListItemClick(Class targetComponent, @LayoutRes int resId) {
+        if (targetComponent!=null) {
+            Intent intent = new Intent(this, targetComponent);
+            if (targetComponent.equals(ViewGroupsActivity.class))
+                intent.putExtra(ViewGroupsActivity.EXTRA_LAYOUT_ID, resId);
+            startActivity(intent);
         }
+    }
 
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.ivIcon.setImageResource(ICONS[position]);
-            holder.tvLabel.setText(LABELS[position]);
-        }
-
-        @Override
-        public int getItemCount() {
-            return LABELS.length;
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder {
-            private ImageView ivIcon;
-            private TextView tvLabel;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-
-                ivIcon = (ImageView) itemView.findViewById(R.id.icon);
-                tvLabel = (TextView) itemView.findViewById(R.id.label);
-            }
-        }
-    }*/
+    public void clearNavSelection() {
+        curNav = 0;
+        navigationView.setCheckedItem(R.id.none);
+    }
 }

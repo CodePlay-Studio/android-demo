@@ -26,7 +26,45 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="widgets">Widgets (Views)</string>
+    <string-array name="spinner_items">
+        <item>item 1</item>
+        <item>item 2</item>
+        <item>item 3</item>
+        <item>item 4</item>
+        <item>item 5</item>
+    </string-array>
     <string name="layouts">Layouts (ViewGroups)</string>
+    <string name="framelayout">FrameLayout</string>
+    <string name="framelayout_short_desc">A layout designed to block out an area on the screen.</string>
+    <string name="relativelayout">RelativeLayout</string>
+    <string name="relativelayout_short_desc">A layout where the position of the childrens can be described in relation to each other or to the parent.</string>
+    <string name="linearlayout">LinearLayout</string>
+    <string name="linearlayout_short_desc">A layout to display its children in a single order (horizontal or vertical).</string>
+    <string name="scrollview">ScrollView</string>
+    <string name="scrollview_short_desc">A layout that allows the view hierarchy placed within it to be scrolled when the hierarchy is beyond its own bound.</string>
+    <string name="gridlayout">GridLayout (API 14)</string>
+    <string name="gridlayout_short_desc">A layout that places its childrens in rectangular grid.</string>
+    <string name="coordinatorlayout">CoordinatorLayout (API 21)</string>
+    <string name="coordinatorlayout_short_desc">A layout that manages interactions between its children.</string>
+    <string name="coordinator_article">Android is a mobile operating system (OS) currently developed by Google,
+        based on the Linux kernel and designed primarily for touchscreen mobile devices
+        such as smartphones and tablets.
+        \n\nAndroid was initially authored by Android, Inc., which Google bought in 2005,[17]
+        and unveiled it in 2007, along with the founding of the Open Handset Alliance –
+        a consortium of hardware, software, and telecommunication companies devoted to
+        advancing open standards for mobile devices.
+        \n\nAndroid\'s source code is released by Google under open source licenses,
+        although most Android devices ultimately ship with both open source and proprietary software,
+        including required proprietary components for Google\'s services.
+    </string>
     <string name="tablayout">Tab Layout</string>
     <string name="tablayout_desc_short">A horizontal layout to display tabs.</string>
+    <string name="viewflipper">ViewFlipper</string>
+    <string name="viewflipper_short_desc">A layout that animates between two or more views.</string>
+    <string name="listview">ListView</string>
+    <string name="listview_short_desc">A layout displays a list of scrollable items vertically.</string>
+    <string name="gridview">GridView</string>
+    <string name="gridview_short_desc">A layout displays items in two-dimensional scrollable grid.</string>
+    <string name="recyclerview">RecyclerView (API 21)</string>
+    <string name="recyclerview_short_desc">A more advanced and flexible ListView/GridView designed for displaying large data sets efficiently.</string>
 </resources>

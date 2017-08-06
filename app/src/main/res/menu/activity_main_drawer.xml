@@ -25,7 +25,7 @@
                     android:title="@string/widgets"/>
                 <item
                     android:id="@+id/viewgroups"
-                    android:icon="@drawable/ic_view_compact_black_24dp"
+                    android:icon="@drawable/ic_relativelayout_black_24dp"
                     android:title="@string/layouts"/>
             </group>
         </menu>
@@ -33,6 +33,7 @@
 
     <!-- A dummy invisible menu item to uncheck all selection -->
     <item android:id="@+id/none"
+          android:checkable="true"
           android:visible="false" />
 
 </menu>
