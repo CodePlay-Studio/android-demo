@@ -1,6 +1,7 @@
 package my.com.codeplay.android_demo;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -15,7 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 
+import my.com.codeplay.android_demo.animations.AnimationsFragment;
 import my.com.codeplay.android_demo.notifications.NotificationsFragment;
 import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
 import my.com.codeplay.android_demo.views.ViewsFragment;
@@ -26,10 +29,15 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawerLayout;
     // keep track of the current shown fragment
     private int curNav;
+
     private boolean isDrawerItemChanged;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // set the below window flag to request shared element transition between activities.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -71,6 +79,9 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case R.id.notifications:
                         fragment = NotificationsFragment.newInstance();
+                        break;
+                    case R.id.animation:
+                        fragment = AnimationsFragment.newInstance();
                         break;
                 }
 
@@ -131,6 +142,15 @@ public class MainActivity extends AppCompatActivity
             drawerLayout.closeDrawer(GravityCompat.START);
         // true to display the item as the selected item
         return true;
+    }
+
+    @Override
+    public void onFragmentButtonClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_start_bird_anim:
+
+                break;
+        }
     }
 
     @Override

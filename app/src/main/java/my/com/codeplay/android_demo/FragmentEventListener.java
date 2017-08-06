@@ -16,11 +16,13 @@
 package my.com.codeplay.android_demo;
 
 import android.support.annotation.LayoutRes;
+import android.view.View;
 
 /**
  * Created by Tham on 05/08/2017.
  */
 
 public interface FragmentEventListener {
+    void onFragmentButtonClick(View view);
     void onFragmentListItemClick(Class targetComponent, @LayoutRes int resId);
 }
