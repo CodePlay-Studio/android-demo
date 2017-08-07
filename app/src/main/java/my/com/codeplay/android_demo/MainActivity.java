@@ -75,13 +75,16 @@ public class MainActivity extends AppCompatActivity
                         fragment = ViewsFragment.newInstance();
                         break;
                     case R.id.viewgroups:
-                        fragment = ViewGroupsListFragment.newInstance();
+                        fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_VIEWGROUPS);
                         break;
                     case R.id.notifications:
                         fragment = NotificationsFragment.newInstance();
                         break;
                     case R.id.animation:
                         fragment = AnimationsFragment.newInstance();
+                        break;
+                    case R.id.components:
+                        fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_COMPONENTS);
                         break;
                 }
 

@@ -16,46 +16,40 @@
 package my.com.codeplay.android_demo.objects;
 
 import android.support.annotation.DrawableRes;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 
-/**
- * Created by Tham on 05/08/2017.
- */
-
-public class ViewGroupItem {
+public class Item {
     private int thumbnailId;
     private int titleId;
     private int shortDescId;
-    private Class targetComponent;
-    private int layoutId;
 
-    public ViewGroupItem(@DrawableRes int thumbnailId, @StringRes int titleId,
-                         @StringRes int shortDescId, Class targetComponent, @LayoutRes int layoutId) {
+    public Item(@DrawableRes int thumbnailId, @StringRes int titleId, @StringRes int shortDescId) {
         this.thumbnailId = thumbnailId;
         this.titleId = titleId;
         this.shortDescId = shortDescId;
-        this.targetComponent = targetComponent;
-        this.layoutId = layoutId;
     }
 
     public int getThumbnailId() {
         return thumbnailId;
     }
 
+    public void setThumbnailId(int thumbnailId) {
+        this.thumbnailId = thumbnailId;
+    }
+
     public int getTitleId() {
         return titleId;
+    }
+
+    public void setTitleId(int titleId) {
+        this.titleId = titleId;
     }
 
     public int getShortDescId() {
         return shortDescId;
     }
 
-    public Class getTargetComponent() {
-        return targetComponent;
-    }
-
-    public int getLayoutId() {
-        return layoutId;
+    public void setShortDescId(int shortDescId) {
+        this.shortDescId = shortDescId;
     }
 }

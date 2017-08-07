@@ -93,6 +93,14 @@
     <string name="notify">Notify</string>
     <string name="animations">Animations</string>
     <string name="components">Components</string>
+    <string name="service">Service</string>
+    <string name="service_desc">A component that perform long-running operations / remote processes in the background.</string>
+    <string name="broadcast_receiver">Broadcast Receiver</string>
+    <string name="broadcast_receiver_desc">A component that responds to system-wide broadcast announcements.</string>
+    <string name="network_connected">Network connected</string>
+    <string name="network_disconnected">Network disconnected</string>
+    <string name="content_provider">Content Provider</string>
+    <string name="content_provider_desc">A component that manages a shared set of application data.</string>
     <string name="multimedia">Multimedia</string>
     <string name="network_operation">Network Operation</string>
     <string name="database">Database</string>

@@ -31,7 +31,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import my.com.codeplay.android_demo.objects.ViewGroupItem;
+import my.com.codeplay.android_demo.components.BroadcastReceiverActivity;
+import my.com.codeplay.android_demo.objects.ListItem;
 import my.com.codeplay.android_demo.viewgroups.GridViewActivity;
 import my.com.codeplay.android_demo.viewgroups.ListViewActivity;
 import my.com.codeplay.android_demo.viewgroups.RecyclerViewActivity;
@@ -43,12 +44,21 @@ import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
  * Created by Tham on 05/08/2017.
  */
 
-public class ViewGroupsListFragment extends ListFragment {
-    private List<ViewGroupItem> itemList;
+public class DemoListFragment extends ListFragment {
+    public static final int TYPE_VIEWGROUPS = 1;
+    public static final int TYPE_COMPONENTS = 2;
+    private static final String EXTRA_TYPE = "android_demo.demolistfragment.extra.TYPE";
+
+    private List<ListItem> itemList;
     private FragmentEventListener callback;
 
-    public static ViewGroupsListFragment newInstance() {
-        ViewGroupsListFragment fragment = new ViewGroupsListFragment();
+    public static DemoListFragment newInstance(int type) {
+        DemoListFragment fragment = new DemoListFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putInt(EXTRA_TYPE, type);
+        fragment.setArguments(bundle);
+
         return fragment;
     }
 
@@ -67,32 +77,41 @@ public class ViewGroupsListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         itemList = new ArrayList<>();
-        itemList.add(new ViewGroupItem(0, R.string.framelayout, R.string.framelayout_short_desc,
-                ViewGroupsActivity.class, R.layout.activity_framelayout));
-        itemList.add(new ViewGroupItem(R.drawable.ic_relativelayout_black_48dp, R.string.relativelayout,
-                R.string.relativelayout_short_desc, ViewGroupsActivity.class, R.layout.activity_relativelayout));
-        itemList.add(new ViewGroupItem(R.drawable.ic_linearlayout_black_24dp, R.string.linearlayout, R.string.linearlayout_short_desc,
-                ViewGroupsActivity.class, R.layout.activity_linearlayout));
-        itemList.add(new ViewGroupItem(0, R.string.scrollview, R.string.scrollview_short_desc,
-                ViewGroupsActivity.class, R.layout.activity_scrollview));
-        itemList.add(new ViewGroupItem(0, R.string.tablelayout, R.string.tablelayout_short_desc,
-                ViewGroupsActivity.class, R.layout.activity_tablelayout));
-        itemList.add(new ViewGroupItem(0, R.string.gridlayout, R.string.gridlayout_short_desc,
-                ViewGroupsActivity.class, R.layout.activity_gridlayout));
-        itemList.add(new ViewGroupItem(0, R.string.coordinatorlayout, R.string.coordinatorlayout_short_desc,
-                ViewGroupsActivity.class, R.layout.activity_coordinatorlayout));
-        itemList.add(new ViewGroupItem(0, R.string.slidingdrawer, R.string.slidingdrawer_short_desc,
-                ViewGroupsActivity.class, R.layout.activity_sliding_drawer));
-        itemList.add(new ViewGroupItem(R.drawable.ic_tabs, R.string.tablayout,
-                R.string.tablayout_desc_short, TabLayoutActivity.class, 0));
-        itemList.add(new ViewGroupItem(R.drawable.ic_viewflipper_black_48dp, R.string.viewflipper,
-                R.string.viewflipper_short_desc, ViewFlipperActivity.class, 0));
-        itemList.add(new ViewGroupItem(R.drawable.ic_listview_black_48dp, R.string.listview,
-                R.string.listview_short_desc, ListViewActivity.class, 0));
-        itemList.add(new ViewGroupItem(R.drawable.ic_gridview_black_48dp, R.string.gridview,
-                R.string.gridview_short_desc, GridViewActivity.class, 0));
-        itemList.add(new ViewGroupItem(0, R.string.recyclerview, R.string.recyclerview_short_desc,
-                RecyclerViewActivity.class, 0));
+
+        switch (getArguments().getInt(EXTRA_TYPE)) {
+            case TYPE_VIEWGROUPS:
+                itemList.add(new ListItem(0, R.string.framelayout, R.string.framelayout_short_desc,
+                        ViewGroupsActivity.class, R.layout.activity_framelayout));
+                itemList.add(new ListItem(R.drawable.ic_relativelayout_black_48dp, R.string.relativelayout,
+                        R.string.relativelayout_short_desc, ViewGroupsActivity.class, R.layout.activity_relativelayout));
+                itemList.add(new ListItem(R.drawable.ic_linearlayout_black_24dp, R.string.linearlayout, R.string.linearlayout_short_desc,
+                        ViewGroupsActivity.class, R.layout.activity_linearlayout));
+                itemList.add(new ListItem(0, R.string.scrollview, R.string.scrollview_short_desc,
+                        ViewGroupsActivity.class, R.layout.activity_scrollview));
+                itemList.add(new ListItem(0, R.string.tablelayout, R.string.tablelayout_short_desc,
+                        ViewGroupsActivity.class, R.layout.activity_tablelayout));
+                itemList.add(new ListItem(0, R.string.gridlayout, R.string.gridlayout_short_desc,
+                        ViewGroupsActivity.class, R.layout.activity_gridlayout));
+                itemList.add(new ListItem(0, R.string.coordinatorlayout, R.string.coordinatorlayout_short_desc,
+                        ViewGroupsActivity.class, R.layout.activity_coordinatorlayout));
+                itemList.add(new ListItem(0, R.string.slidingdrawer, R.string.slidingdrawer_short_desc,
+                        ViewGroupsActivity.class, R.layout.activity_sliding_drawer));
+                itemList.add(new ListItem(R.drawable.ic_tabs, R.string.tablayout,
+                        R.string.tablayout_desc_short, TabLayoutActivity.class, 0));
+                itemList.add(new ListItem(R.drawable.ic_viewflipper_black_48dp, R.string.viewflipper,
+                        R.string.viewflipper_short_desc, ViewFlipperActivity.class, 0));
+                itemList.add(new ListItem(R.drawable.ic_listview_black_48dp, R.string.listview,
+                        R.string.listview_short_desc, ListViewActivity.class, 0));
+                itemList.add(new ListItem(R.drawable.ic_gridview_black_48dp, R.string.gridview,
+                        R.string.gridview_short_desc, GridViewActivity.class, 0));
+                itemList.add(new ListItem(0, R.string.recyclerview, R.string.recyclerview_short_desc,
+                        RecyclerViewActivity.class, 0));
+                break;
+            case TYPE_COMPONENTS:
+                itemList.add(new ListItem(0, R.string.broadcast_receiver, R.string.broadcast_receiver_desc,
+                        BroadcastReceiverActivity.class, 0));
+                break;
+        }
     }
 
     @Override
@@ -142,7 +161,7 @@ public class ViewGroupsListFragment extends ListFragment {
                 holder = (ViewHolder) convertView.getTag();
             }
 
-            ViewGroupItem item = (ViewGroupItem) getItem(position);
+            ListItem item = (ListItem) getItem(position);
             if (item != null) {
                 holder.ivThumbnail.setImageResource(item.getThumbnailId());
                 holder.tvTitle.setText(item.getTitleId());
