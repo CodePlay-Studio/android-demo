@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import my.com.codeplay.android_demo.components.BroadcastReceiverActivity;
+import my.com.codeplay.android_demo.components.ServiceDemoActivity;
 import my.com.codeplay.android_demo.objects.ListItem;
 import my.com.codeplay.android_demo.viewgroups.GridViewActivity;
 import my.com.codeplay.android_demo.viewgroups.ListViewActivity;
@@ -108,6 +109,8 @@ public class DemoListFragment extends ListFragment {
                         RecyclerViewActivity.class, 0));
                 break;
             case TYPE_COMPONENTS:
+                itemList.add(new ListItem(0, R.string.service, R.string.service_desc,
+                        ServiceDemoActivity.class, 0));
                 itemList.add(new ListItem(0, R.string.broadcast_receiver, R.string.broadcast_receiver_desc,
                         BroadcastReceiverActivity.class, 0));
                 break;

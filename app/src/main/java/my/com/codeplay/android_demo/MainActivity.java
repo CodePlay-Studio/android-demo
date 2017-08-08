@@ -151,7 +151,6 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentButtonClick(View v) {
         switch (v.getId()) {
             case R.id.button_start_bird_anim:
-
                 break;
         }
     }
