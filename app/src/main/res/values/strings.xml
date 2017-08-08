@@ -99,9 +99,13 @@
     <string name="broadcast_receiver_desc">A component that responds to system-wide broadcast announcements.</string>
     <string name="network_connected">Network connected</string>
     <string name="network_disconnected">Network disconnected</string>
-    <string name="content_provider">Content Provider</string>
+    <string name="content_provider">Content Provider (*Refer to DatabaseProvider)</string>
     <string name="content_provider_desc">A component that manages a shared set of application data.</string>
     <string name="multimedia">Multimedia</string>
     <string name="network_operation">Network Operation</string>
+    <string name="storages">Storages</string>
     <string name="database">Database</string>
+    <string name="database_desc">A structured set of data held in device.</string>
+    <string name="loadermanager">Database with LoaderManager (API 11)</string>
+    <string name="loadermanager_desc">Interface associated with an Activity or Fragment for managing one or more Loader instances, a class that performs asynchronous loading of data.</string>
 </resources>

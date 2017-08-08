@@ -86,6 +86,9 @@ public class MainActivity extends AppCompatActivity
                     case R.id.components:
                         fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_COMPONENTS);
                         break;
+                    case R.id.storages:
+                        fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_STORAGES);
+                        break;
                 }
 
                 if (fragment!=null) {

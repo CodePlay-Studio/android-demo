@@ -37,9 +37,9 @@ public class RecyclerViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         // set to true to optimize performance if changes in content do not change the layout size
-        mRecyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(true);
         /*
          * provide a LinearLayoutLayoutManager to align items in single order vertically or horizontally.
          * To lay items in a grid, use GridLayoutManager instead. By default, each item occupies 1 span.
@@ -50,10 +50,10 @@ public class RecyclerViewActivity extends Activity {
          */
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setLayoutManager(mLayoutManager);
 
         RecyclerView.Adapter mAdapter = new RecyclerViewAdapter();
-        mRecyclerView.setAdapter(mAdapter);
+        recyclerView.setAdapter(mAdapter);
     }
 
     private class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {

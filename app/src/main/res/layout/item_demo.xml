@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/view_margin"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="3"
             android:textStyle="normal"
             android:textColor="@color/colorPrimary"/>
 

@@ -48,9 +48,9 @@
                     android:icon="@drawable/ic_network_black_24dp"
                     android:title="@string/network_operation"/>
                 <item
-                    android:id="@+id/database"
+                    android:id="@+id/storages"
                     android:icon="@drawable/ic_storage_black_24dp"
-                    android:title="@string/database"/>
+                    android:title="@string/storages"/>
             </group>
         </menu>
     </item>

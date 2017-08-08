@@ -34,6 +34,8 @@ import java.util.List;
 import my.com.codeplay.android_demo.components.BroadcastReceiverActivity;
 import my.com.codeplay.android_demo.components.ServiceDemoActivity;
 import my.com.codeplay.android_demo.objects.ListItem;
+import my.com.codeplay.android_demo.storages.DatabaseDemoActivity;
+import my.com.codeplay.android_demo.storages.LoaderManagerDemoActivity;
 import my.com.codeplay.android_demo.viewgroups.GridViewActivity;
 import my.com.codeplay.android_demo.viewgroups.ListViewActivity;
 import my.com.codeplay.android_demo.viewgroups.RecyclerViewActivity;
@@ -48,6 +50,7 @@ import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
 public class DemoListFragment extends ListFragment {
     public static final int TYPE_VIEWGROUPS = 1;
     public static final int TYPE_COMPONENTS = 2;
+    public static final int TYPE_STORAGES = 3;
     private static final String EXTRA_TYPE = "android_demo.demolistfragment.extra.TYPE";
 
     private List<ListItem> itemList;
@@ -113,6 +116,14 @@ public class DemoListFragment extends ListFragment {
                         ServiceDemoActivity.class, 0));
                 itemList.add(new ListItem(0, R.string.broadcast_receiver, R.string.broadcast_receiver_desc,
                         BroadcastReceiverActivity.class, 0));
+                itemList.add(new ListItem(0, R.string.content_provider, R.string.content_provider_desc,
+                        LoaderManagerDemoActivity.class, 0));
+                break;
+            case TYPE_STORAGES:
+                itemList.add(new ListItem(0, R.string.database, R.string.database_desc,
+                        DatabaseDemoActivity.class, 0));
+                itemList.add(new ListItem(0, R.string.loadermanager, R.string.loadermanager_desc,
+                        LoaderManagerDemoActivity.class, 0));
                 break;
         }
     }
@@ -153,7 +164,7 @@ public class DemoListFragment extends ListFragment {
 
             if (convertView==null) {
                 convertView = LayoutInflater.from(getContext())
-                        .inflate(R.layout.item_viewgroup, parent, false);
+                        .inflate(R.layout.item_demo, parent, false);
 
                 holder = new ViewHolder();
                 holder.ivThumbnail = (ImageView) convertView.findViewById(R.id.image);
