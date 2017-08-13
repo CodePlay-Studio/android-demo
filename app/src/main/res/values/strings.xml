@@ -103,6 +103,10 @@
     <string name="content_provider_desc">A component that manages a shared set of application data.</string>
     <string name="multimedia">Multimedia</string>
     <string name="network_operation">Network Operation</string>
+    <string name="asynctask">Android Threads (AsyncTask)</string>
+    <string name="asynctask_desc">A framework designed to be enabled proper and easy work around with the UI thread.</string>
+    <string name="threads_desc">UI thread is in-charged of dispatching events to the user interface and interacts with components from Android UI Toolkit. Thus:
+        \n\n1. Do not block it.\n2. Do not update UI from outside UI Thread.</string>
     <string name="storages">Storages</string>
     <string name="database">Database</string>
     <string name="database_desc">A structured set of data held in device.</string>

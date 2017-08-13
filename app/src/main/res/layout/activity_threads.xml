@@ -1,0 +1,88 @@
+<!--
+  Copyright (c) 2012 CodePlay Studio. All rights reserved.
+
+  This app is designed for training purpose used in Native Android™
+  for Mobile Development course conducted by CodePlay Studio.
+  The source code is provided "AS IS". Any expressed or implied warranties,
+  including, but not limited to, the implied warranties of merchantability
+  and fitness for a particular purpose are disclaimed. In no event shall the
+  copyright holder be liable for any direct, indirect, incidental, special,
+  exemplary, or consequential damages (Including, but not limited to,
+  procurement of goods or services; loss of use, data, or profits;
+  or business interruption) however caused and on any theory of liability,
+  whether in contract, strict liability, or tort (Including negligence or otherwise)
+  arising in any way out of the use of this source code, even if advised of the
+  possibility of such damage.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the above copyright notice
+  and disclaimer are retained in the redistributions of source code or
+  reproduced in the documentation and/or other materials provided
+  with the redistributions in binary form.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingEnd="@dimen/activity_horizontal_margin"
+	android:paddingStart="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+    tools:ignore="HardcodedText" >
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/threads_desc" />
+        
+        <ProgressBar
+			android:id="@+id/progressBar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/view_margin"
+			android:indeterminate="false"
+			android:progress="0"
+			style="?android:attr/progressBarStyleHorizontal"/>
+        
+    </LinearLayout>
+ 	
+    <LinearLayout 
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:orientation="horizontal" >
+		
+        <Button android:id="@+id/button_ui_thread"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/view_margin"
+            android:onClick="onClick"
+            android:text="UI Thread"/>
+        
+        <Button android:id="@+id/button_worker_thread"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginStart="@dimen/view_margin"
+            android:onClick="onClick"
+	    	android:text="Worker Thread"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:onClick="onClick"
+        android:src="@drawable/ic_reset_black_24dp"/>
+
+</RelativeLayout>

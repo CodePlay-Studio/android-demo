@@ -89,9 +89,15 @@
             android:windowSoftInputMode="stateAlwaysHidden"/>
 
         <activity android:name=".storages.LoaderManagerDemoActivity"
-            android:label="@string/database"
+            android:label="@string/loadermanager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".networks.ThreadsDemoActivity"
+            android:label="@string/asynctask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
     </application>
 
 </manifest>
