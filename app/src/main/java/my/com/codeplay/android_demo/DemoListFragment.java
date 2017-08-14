@@ -33,6 +33,7 @@ import java.util.List;
 
 import my.com.codeplay.android_demo.components.BroadcastReceiverActivity;
 import my.com.codeplay.android_demo.components.ServiceDemoActivity;
+import my.com.codeplay.android_demo.multimedia.VideoPlaybackActivity;
 import my.com.codeplay.android_demo.networks.ThreadsDemoActivity;
 import my.com.codeplay.android_demo.objects.ListItem;
 import my.com.codeplay.android_demo.storages.DatabaseDemoActivity;
@@ -51,8 +52,9 @@ import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
 public class DemoListFragment extends ListFragment {
     public static final int TYPE_VIEWGROUPS = 1;
     public static final int TYPE_COMPONENTS = 2;
-    public static final int TYPE_NETWORK = 3;
-    public static final int TYPE_STORAGES = 4;
+    public static final int TYPE_MULTIMEDIA = 3;
+    public static final int TYPE_NETWORK = 4;
+    public static final int TYPE_STORAGES = 5;
     private static final String EXTRA_TYPE = "android_demo.demolistfragment.extra.TYPE";
 
     private List<ListItem> itemList;
@@ -120,6 +122,9 @@ public class DemoListFragment extends ListFragment {
                         BroadcastReceiverActivity.class, 0));
                 itemList.add(new ListItem(0, R.string.content_provider, R.string.content_provider_desc,
                         LoaderManagerDemoActivity.class, 0));
+                break;
+            case TYPE_MULTIMEDIA:
+                itemList.add(new ListItem(0, R.string.videoview, R.string.videoview_short_desc, VideoPlaybackActivity.class, 0));
                 break;
             case TYPE_NETWORK:
                 itemList.add(new ListItem(0, R.string.asynctask, R.string.asynctask_desc,

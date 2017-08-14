@@ -20,6 +20,7 @@ import android.view.Window;
 
 import my.com.codeplay.android_demo.animations.AnimationsFragment;
 import my.com.codeplay.android_demo.notifications.NotificationsFragment;
+import my.com.codeplay.android_demo.sensor.SensorDemoFragment;
 import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
 import my.com.codeplay.android_demo.views.ViewsFragment;
 
@@ -86,11 +87,17 @@ public class MainActivity extends AppCompatActivity
                     case R.id.components:
                         fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_COMPONENTS);
                         break;
+                    case R.id.multimedia:
+                        fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_MULTIMEDIA);
+                        break;
                     case R.id.network:
                         fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_NETWORK);
                         break;
                     case R.id.storages:
                         fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_STORAGES);
+                        break;
+                    case R.id.sensor:
+                        fragment = SensorDemoFragment.newInstance(true);
                         break;
                 }
 

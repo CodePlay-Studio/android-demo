@@ -102,6 +102,9 @@
     <string name="content_provider">Content Provider (*Refer to DatabaseProvider)</string>
     <string name="content_provider_desc">A component that manages a shared set of application data.</string>
     <string name="multimedia">Multimedia</string>
+    <string name="mediaplayer">MediaPlayer</string>
+    <string name="videoview">VideoView</string>
+    <string name="videoview_short_desc">Displays a video file.</string>
     <string name="network_operation">Network Operation</string>
     <string name="asynctask">Android Threads (AsyncTask)</string>
     <string name="asynctask_desc">A framework designed to be enabled proper and easy work around with the UI thread.</string>
@@ -112,4 +115,7 @@
     <string name="database_desc">A structured set of data held in device.</string>
     <string name="loadermanager">Database with LoaderManager (API 11)</string>
     <string name="loadermanager_desc">Interface associated with an Activity or Fragment for managing one or more Loader instances, a class that performs asynchronous loading of data.</string>
+    <string name="sensor">Sensor</string>
+    <string name="raw_data">Raw Data</string>
+    <string name="sensor_not_available">Sensor(s) is not available in your device.</string>
 </resources>

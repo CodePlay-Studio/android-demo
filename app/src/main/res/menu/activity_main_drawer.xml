@@ -51,6 +51,10 @@
                     android:id="@+id/storages"
                     android:icon="@drawable/ic_storage_black_24dp"
                     android:title="@string/storages"/>
+                <item
+                    android:id="@+id/sensor"
+                    android:icon="@drawable/ic_sensor_black_24dp"
+                    android:title="@string/sensor"/>
             </group>
         </menu>
     </item>

@@ -81,7 +81,12 @@
         <provider
             android:authorities="my.com.codeplay.android_demo.data"
             android:name=".storages.DatabaseProvider"
-            android:exported="true"/>
+            android:exported="false"/>
+
+        <activity android:name=".multimedia.VideoPlaybackActivity"
+            android:label="@string/videoview"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         
         <activity android:name=".storages.DatabaseDemoActivity"
             android:label="@string/database"
