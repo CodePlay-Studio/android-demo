@@ -29,7 +29,8 @@ import android.widget.ImageView;
 
 import my.com.codeplay.android_demo.R;
 
-public class AnimationsActivity extends AppCompatActivity implements Animation.AnimationListener {
+public class AnimationsActivity extends AppCompatActivity
+        implements Animation.AnimationListener {
     private ImageView ivBird;
     private ImageButton ibStart;
 

@@ -16,22 +16,32 @@
 package my.com.codeplay.android_demo.notifications;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 import my.com.codeplay.android_demo.MainActivity;
 import my.com.codeplay.android_demo.R;
@@ -55,6 +65,8 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 		view.findViewById(R.id.button_show_snackbar).setOnClickListener(this);
 		view.findViewById(R.id.button_show_alertdialog).setOnClickListener(this);
 		view.findViewById(R.id.button_show_listdialog).setOnClickListener(this);
+		view.findViewById(R.id.button_show_datepickerdialog).setOnClickListener(this);
+		view.findViewById(R.id.button_show_timepickerdialog).setOnClickListener(this);
 		view.findViewById(R.id.button_notify).setOnClickListener(this);
 		return view;
 	}
@@ -75,29 +87,37 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 			return;
 
 		switch(view.getId()) {
-		case R.id.button_show_toast:
-			showToastMsg(getString(R.string.toast_msg));
-			break;
-		case R.id.button_show_snackbar:
-			if (getView()!=null) {
-				Snackbar snackbar = Snackbar.make(getView(), R.string.snackbar_msg, Snackbar.LENGTH_LONG);
-				// custom the message text color, otherwise it is followed the theme text color.
-				((TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text))
-						.setTextColor(ContextCompat.getColor(getActivity(), android.R.color.white));
-				snackbar.show();
-			}
-			break;
-		case R.id.button_show_alertdialog:
-			alertDialog = showAlertDialog();
-			alertDialog.show();
-			break;
-		case R.id.button_show_listdialog:
-			alertDialog = showListDialog();
-			alertDialog.show();
-			break;
-		case R.id.button_notify:
-			notifyOnStatus();
-			break;
+			case R.id.button_show_toast:
+				showToastMsg(getString(R.string.toast_msg));
+				break;
+			case R.id.button_show_snackbar:
+				if (getView()!=null) {
+					Snackbar snackbar = Snackbar.make(getView(), R.string.snackbar_msg, Snackbar.LENGTH_LONG);
+					// custom the message text color, otherwise it is followed the theme text color.
+					((TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text))
+							.setTextColor(ContextCompat.getColor(getActivity(), android.R.color.white));
+					snackbar.show();
+				}
+				break;
+			case R.id.button_show_alertdialog:
+				alertDialog = showAlertDialog();
+				alertDialog.show();
+				break;
+			case R.id.button_show_listdialog:
+				alertDialog = showListDialog();
+				alertDialog.show();
+				break;
+			case R.id.button_show_datepickerdialog:
+                DialogFragment datePickerFragment = new DatePickerFragment();
+                datePickerFragment.show(getFragmentManager(), "datePicker");
+				break;
+			case R.id.button_show_timepickerdialog:
+                DialogFragment timePickerFragment = new TimePickerFragment();
+                timePickerFragment.show(getFragmentManager(), "timePicker");
+				break;
+			case R.id.button_notify:
+				notifyOnStatus();
+				break;
 		}
 	}
 
@@ -211,4 +231,44 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 		notificationMgr.notify(notificationId, notification);
 	}
 
+	public static class DatePickerFragment extends DialogFragment
+        implements DatePickerDialog.OnDateSetListener {
+
+        @NonNull
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            // Todo process the date chosen here
+        }
+    }
+
+    public static class TimePickerFragment extends DialogFragment
+            implements TimePickerDialog.OnTimeSetListener {
+
+        @NonNull
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
+
+            // Create a new instance of TimePickerDialog and return it
+            return new TimePickerDialog(getActivity(), this, hour, minute,
+                    DateFormat.is24HourFormat(getActivity()));
+        }
+
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            // Todo process the time chosen here
+        }
+    }
 }

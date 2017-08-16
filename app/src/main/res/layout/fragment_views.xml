@@ -50,6 +50,7 @@
                 android:layout_centerInParent="true"
                 android:ellipsize="end"
                 android:lines="1"
+                android:maxLines="1"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:text="Hello World"/>

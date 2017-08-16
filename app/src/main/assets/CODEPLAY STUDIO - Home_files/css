@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Syncopate'), local('Syncopate-Regular'), url(http://themes.googleusercontent.com/static/fonts/syncopate/v3/pDM9CVwNx1ufBHCEatJA3LO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}

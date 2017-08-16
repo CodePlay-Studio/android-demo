@@ -35,6 +35,7 @@ import my.com.codeplay.android_demo.components.BroadcastReceiverActivity;
 import my.com.codeplay.android_demo.components.ServiceDemoActivity;
 import my.com.codeplay.android_demo.multimedia.VideoPlaybackActivity;
 import my.com.codeplay.android_demo.networks.ThreadsDemoActivity;
+import my.com.codeplay.android_demo.networks.WebViewDemoActivity;
 import my.com.codeplay.android_demo.objects.ListItem;
 import my.com.codeplay.android_demo.storages.DatabaseDemoActivity;
 import my.com.codeplay.android_demo.storages.LoaderManagerDemoActivity;
@@ -127,6 +128,8 @@ public class DemoListFragment extends ListFragment {
                 itemList.add(new ListItem(0, R.string.videoview, R.string.videoview_short_desc, VideoPlaybackActivity.class, 0));
                 break;
             case TYPE_NETWORK:
+                itemList.add(new ListItem(0, R.string.webview, R.string.webview_desc,
+                        WebViewDemoActivity.class, 0));
                 itemList.add(new ListItem(0, R.string.asynctask, R.string.asynctask_desc,
                         ThreadsDemoActivity.class, 0));
                 break;

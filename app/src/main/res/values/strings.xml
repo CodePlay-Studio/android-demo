@@ -88,6 +88,10 @@
         Normally used for modal events that require users to take an action before they can proceed.</string>
     <string name="dialog_norm">Normal</string>
     <string name="dialog_list">List</string>
+    <string name="pickerdialog">DatePickerDialog &amp; TimePickerDialog</string>
+    <string name="pickerdialog_desc">A dialog with pre-defined UI that allows user to select a date or time.</string>
+    <string name="datepickerdialog">DatePickerDialog</string>
+    <string name="timepickerdialog">TimePickerDialog</string>
     <string name="notification">Notification</string>
     <string name="notification_desc">An user interface element that display outside an app to indicate an event has occurred which user can view and respond to it by dragging down the status bar to open the notification drawer.</string>
     <string name="notify">Notify</string>
@@ -106,6 +110,12 @@
     <string name="videoview">VideoView</string>
     <string name="videoview_short_desc">Displays a video file.</string>
     <string name="network_operation">Network Operation</string>
+    <string name="webview">WebView (Hello Browser)</string>
+    <string name="webview_desc">A View that displays online content (e.g. web pages) within an Activity with the *WebKit rendering engine.
+        \n\n*  Since Android 4.4 (KitKat), it is based on the Chromium open source project and share the same rendering engine as Chrome for Android.
+        \n** In Android 5.0 (Lollipop), the WebView has moved to an APK (Settings > Apps > Android System WebView) so it can be updated separately to the Android platform.
+        \n***In Android 7.0 (Nougat), Chrome APK (v51 and above) is used to provide and render Android System WebView.
+    </string>
     <string name="asynctask">Android Threads (AsyncTask)</string>
     <string name="asynctask_desc">A framework designed to be enabled proper and easy work around with the UI thread.</string>
     <string name="threads_desc">UI thread is in-charged of dispatching events to the user interface and interacts with components from Android UI Toolkit. Thus:

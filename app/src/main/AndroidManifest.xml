@@ -74,6 +74,7 @@
         <receiver android:name=".components.MyBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
           -->
@@ -97,6 +98,18 @@
             android:label="@string/loadermanager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".networks.WebViewDemoActivity"
+            android:label="@string/webview"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".networks.ThreadsDemoActivity"
             android:label="@string/asynctask"
