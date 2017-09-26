@@ -15,7 +15,9 @@
 
 package my.com.codeplay.android_demo.viewgroups;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,6 +25,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -32,7 +35,8 @@ import java.util.List;
 
 import my.com.codeplay.android_demo.R;
 
-public class GridViewActivity extends AppCompatActivity {
+public class GridViewActivity extends AppCompatActivity implements
+        AdapterView.OnItemClickListener {
     private List<ResolveInfo> appsList;
 
     @Override
@@ -43,7 +47,21 @@ public class GridViewActivity extends AppCompatActivity {
         loadApps();
 
         GridView gridView = (GridView) findViewById(R.id.gridview);
+        gridView.setOnItemClickListener(this);
         gridView.setAdapter(new AppsAdapter());
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        ResolveInfo appInfo = appsList.get(position);
+        ActivityInfo activityInfo = appInfo.activityInfo;
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        intent.setComponent(new ComponentName(
+                activityInfo.applicationInfo.packageName, activityInfo.name));
+        startActivity(intent);
     }
 
     private void loadApps() {
@@ -88,6 +106,8 @@ public class GridViewActivity extends AppCompatActivity {
             }
 
             ResolveInfo appInfo = appsList.get(position);
+            // create and decoding a bitmap is heavy, the more efficient way is to load and cache each
+            // app's icon on a worker thread.
             holder.image.setImageDrawable(appInfo.activityInfo.loadIcon(getPackageManager()));
             holder.text.setText(appInfo.activityInfo.loadLabel(getPackageManager()));
 
