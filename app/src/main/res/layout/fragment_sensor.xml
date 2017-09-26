@@ -55,6 +55,14 @@
             android:src="@drawable/img_compass"
             android:visibility="gone"/>
 
+        <my.com.codeplay.android_demo.sensor.Compass
+            android:id="@+id/compass_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/compass"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"/>
+
     </RelativeLayout>
    
 </LinearLayout>

@@ -13,4 +13,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="view_margin">8dp</dimen>
     <dimen name="view_margin_small">4dp</dimen>
+
+    <dimen name="stroke">4dp</dimen>
 </resources>

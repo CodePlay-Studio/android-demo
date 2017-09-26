@@ -39,6 +39,7 @@ public class SensorDemoFragment extends Fragment implements SensorEventListener 
     private static final String TYPE_SENSOR = "TYPE_SENSOR";
 	private TextView output;
 	private ImageView ivCompass;
+	private Compass compass;
 	private SensorManager sensorManager;
 	private Sensor sensor;
 	private boolean isSensing;
@@ -71,6 +72,7 @@ public class SensorDemoFragment extends Fragment implements SensorEventListener 
 
 		output = (TextView) view.findViewById(R.id.output);
 		ivCompass = (ImageView) view.findViewById(R.id.compass);
+		compass = (Compass) view.findViewById(R.id.compass_custom);
 
 		return view;
 	}
@@ -137,6 +139,7 @@ public class SensorDemoFragment extends Fragment implements SensorEventListener 
 		// This part of code is for orientation ==============================================
 		else if ((accelerometer!=null || gravity!=null) && magnetometer!=null) {
 			ivCompass.setVisibility(View.VISIBLE);
+            compass.setVisibility(View.VISIBLE);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 sensorManager.registerListener(this, gravity!=null? gravity : accelerometer,
@@ -215,6 +218,7 @@ public class SensorDemoFragment extends Fragment implements SensorEventListener 
             // angle in degree [0 - 360] degree
             double azimuth = (Math.toDegrees(mOrientationAngles[0]) + 360) % 360;
             setCompassDirection(azimuth);
+			compass.setAngle((float) -azimuth);
 		}
 		// ======================================================================================
 		else {

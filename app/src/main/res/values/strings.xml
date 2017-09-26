@@ -63,6 +63,23 @@
     </string>
     <string name="slidingdrawer">SlidingDrawer (Deprecated from API 17 onwards)</string>
     <string name="slidingdrawer_short_desc">A layout that hides content out of the screen.</string>
+    <string name="bottom_sheets">Bottom Sheets (API 21)</string>
+    <string name="bottom_sheets_short_desc">Bottom sheets slide up from the bottom of the screen to reveal more content.</string>
+    <string name="bottom_sheets_desc_1">Bottom sheet is a Material component which added to the Android Support Library in v23.2.0. It slide up from the bottom of the screen to reveal more content.</string>
+    <string name="bottom_sheets_desc_2">There are two types of bottom sheets:</string>
+    <string name="bottom_sheets_desc_3">• Persistent bottom sheet (Views that come up from the bottom of the screen)</string>
+    <string name="bottom_sheets_desc_4">• Modal bottom sheet (A dialog)</string>
+    <string name="persistent_bottom_sheets">Persistent bottom sheet</string>
+    <string name="persistent_bottom_sheets_desc_1">BottomSheetBehavior is applied to a child\'s layout_behavior xml attribute of CoordinatorLayout. The height of the visible part of the sheet can be set with xml attribute behavior_peekHeight or Java method setPeekHeight(int) when the sheet is collapsed.</string>
+    <string name="persistent_bottom_sheets_desc_2">
+        User may open/close the sheet with dragging/swiping gestures, or it can be controlled programmatically with setState(int) to one of the following 5 states:\n
+        \n\t• STATE_COLLAPSED: The sheet is collapsed and only a visible part is showing if peek height has set (>1dp).
+        \n\t• STATE_EXPANDED: The sheet is visible to its maximum height.
+        \n\t• STATE_DRAGGING: The sheet is being dragged up or down.
+        \n\t• STATE_SETTLING: The sheet is settling to a specific height (peek height, expanded height or 0) after a drag/swipe gesture.
+        \n\t• STATE_HIDDEN: The sheet is no longer visible.
+    </string>
+    <string name="modal_bottom_sheet">Modal bottom sheet example</string>
     <string name="tablayout">Tab Layout</string>
     <string name="tablayout_desc_short">A horizontal layout to display tabs.</string>
     <string name="viewflipper">ViewFlipper</string>

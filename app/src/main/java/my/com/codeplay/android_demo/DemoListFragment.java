@@ -39,6 +39,7 @@ import my.com.codeplay.android_demo.networks.WebViewDemoActivity;
 import my.com.codeplay.android_demo.objects.ListItem;
 import my.com.codeplay.android_demo.storages.DatabaseDemoActivity;
 import my.com.codeplay.android_demo.storages.LoaderManagerDemoActivity;
+import my.com.codeplay.android_demo.viewgroups.BottomSheetsActivity;
 import my.com.codeplay.android_demo.viewgroups.GridViewActivity;
 import my.com.codeplay.android_demo.viewgroups.ListViewActivity;
 import my.com.codeplay.android_demo.viewgroups.RecyclerViewActivity;
@@ -105,6 +106,8 @@ public class DemoListFragment extends ListFragment {
                         ViewGroupsActivity.class, R.layout.activity_coordinatorlayout));
                 itemList.add(new ListItem(0, R.string.slidingdrawer, R.string.slidingdrawer_short_desc,
                         ViewGroupsActivity.class, R.layout.activity_sliding_drawer));
+                itemList.add(new ListItem(R.drawable.ic_bottom_sheet_48dp, R.string.bottom_sheets, R.string.bottom_sheets_short_desc,
+                        BottomSheetsActivity.class, 0));
                 itemList.add(new ListItem(R.drawable.ic_tabs, R.string.tablayout,
                         R.string.tablayout_desc_short, TabLayoutActivity.class, 0));
                 itemList.add(new ListItem(R.drawable.ic_viewflipper_black_48dp, R.string.viewflipper,
