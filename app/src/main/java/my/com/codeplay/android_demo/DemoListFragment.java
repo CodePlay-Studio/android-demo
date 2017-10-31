@@ -17,16 +17,12 @@ package my.com.codeplay.android_demo;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -156,7 +152,7 @@ public class DemoListFragment extends ListFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        setListAdapter(new ViewGroupListAdapter(getActivity(), itemList));
+        setListAdapter(new ItemListAdapter(getActivity(), itemList));
     }
 
     @Override
@@ -166,45 +162,5 @@ public class DemoListFragment extends ListFragment {
         if (callback!=null)
             callback.onFragmentListItemClick(itemList.get(position).getTargetComponent(),
                     itemList.get(position).getLayoutId());
-    }
-
-    private class ViewGroupListAdapter extends ArrayAdapter {
-
-        public ViewGroupListAdapter(@NonNull Context context, @NonNull List items) {
-            super(context, 0, items);
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            ViewHolder holder;
-
-            if (convertView==null) {
-                convertView = LayoutInflater.from(getContext())
-                        .inflate(R.layout.item_demo, parent, false);
-
-                holder = new ViewHolder();
-                holder.ivThumbnail = (ImageView) convertView.findViewById(R.id.image);
-                holder.tvTitle = (TextView) convertView.findViewById(R.id.title);
-                holder.tvShortDesc = (TextView) convertView.findViewById(R.id.short_desc);
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-            }
-
-            ListItem item = (ListItem) getItem(position);
-            if (item != null) {
-                holder.ivThumbnail.setImageResource(item.getThumbnailId());
-                holder.tvTitle.setText(item.getTitleId());
-                holder.tvShortDesc.setText(item.getShortDescId());
-            }
-            return convertView;
-        }
-    }
-
-    private class ViewHolder {
-        ImageView ivThumbnail;
-        TextView tvTitle;
-        TextView tvShortDesc;
     }
 }

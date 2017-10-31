@@ -33,6 +33,14 @@
         <item>item 4</item>
         <item>item 5</item>
     </string-array>
+    <string name="text_selection">Custom Actions in Text Selection</string>
+    <string name="text_selection_desc">Display text selection actions such as Cut, Copy, and Paste for selected text.</string>
+    <string name="text_selection_long_desc">Starting from Android 6.0 (API 23),
+        apps can display text selection actions such as Cut, Copy, Paste in a contextual floating toolbar.
+        \n\nIn devices running Android 6.0 (API 23), the framework able to display the selection actions in either
+        floating toolbar or action bar mode, while on devices running Android 5.1 (API 22) or lower, only the
+        latter is supported.
+    </string>
     <string name="layouts">Layouts (ViewGroups)</string>
     <string name="framelayout">FrameLayout</string>
     <string name="framelayout_short_desc">A layout designed to block out an area on the screen.</string>

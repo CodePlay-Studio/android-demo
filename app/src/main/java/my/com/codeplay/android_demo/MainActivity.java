@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.master_container, TermsOfUseFragment.newInstance())
+                .replace(R.id.master_container, TermsOfUseFragment.newInstance())
                 .commit();
     }
 

@@ -16,10 +16,15 @@
 package my.com.codeplay.android_demo.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +42,7 @@ import my.com.codeplay.android_demo.R;
  */
 
 public class ViewsFragment extends Fragment {
+    private TextView textView;
     private EditText editText;
     private Chronometer chronometer;
 
@@ -50,6 +56,17 @@ public class ViewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_views, container, false);
 
+        textView = (TextView) view.findViewById(R.id.textview);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(textView.getText());
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                startActivity(new Intent(getActivity(), TextActivity.class));
+            }
+        };
+        spannableStringBuilder.setSpan(clickableSpan, 10, 14, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(spannableStringBuilder);
         editText = (EditText) view.findViewById(R.id.edittext);
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
