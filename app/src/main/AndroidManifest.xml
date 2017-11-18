@@ -14,8 +14,8 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +27,13 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
 
+        <activity android:name=".views.TextSwitcherDemoActivity"
+            android:label="@string/text_switcher"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
         <activity android:name=".views.TextSelectionDemoActivity"
+            android:label="@string/text_selection"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
 
@@ -64,9 +70,28 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
 
-        <activity android:name=".animations.AnimationsActivity"
-            android:label="@string/animations"
+        <activity android:name=".animations.FlyingBirdLaunchActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".animations.FlyingBirdDemoActivity"
+            android:label="@string/view_animation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".animations.FlippingActivity"
+            android:label="@string/property_animation"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".animations.TextSwitchingActivity"
+            android:label="@string/viewpropertyanimator"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".animations.InterpolatorDemoActivity"
+            android:label="@string/interpolator"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden"/>
 
         <activity android:name=".components.ServiceDemoActivity"

@@ -3,7 +3,8 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
 
-    <dimen name="corner_radius">8dp</dimen>
+    <dimen name="corner_radius_small">2dp</dimen>
+    <dimen name="corner_radius_large">8dp</dimen>
     <dimen name="elevation">4dp</dimen>
     <dimen name="max_elevation">4dp</dimen>
 
@@ -15,4 +16,5 @@
     <dimen name="view_margin_small">4dp</dimen>
 
     <dimen name="stroke">4dp</dimen>
+    <dimen name="banner_padding">32dp</dimen>
 </resources>

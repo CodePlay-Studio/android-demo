@@ -41,6 +41,7 @@ public class TextActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listview);
 
         final List<ListItem> itemList = new ArrayList<>();
+        itemList.add(new ListItem(0, R.string.text_switcher, R.string.text_switcher_desc, TextSwitcherDemoActivity.class, 0));
         itemList.add(new ListItem(0, R.string.text_selection, R.string.text_selection_desc, TextSelectionDemoActivity.class, 0));
 
         ListView listView = (ListView) findViewById(android.R.id.list);

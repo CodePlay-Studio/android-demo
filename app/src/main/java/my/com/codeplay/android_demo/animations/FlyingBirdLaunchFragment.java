@@ -26,21 +26,21 @@ import android.view.ViewGroup;
 
 import my.com.codeplay.android_demo.R;
 
-public class AnimationsFragment extends Fragment {
-    public static AnimationsFragment newInstance() {
-        AnimationsFragment fragment = new AnimationsFragment();
+public class FlyingBirdLaunchFragment extends Fragment {
+    public static FlyingBirdLaunchFragment newInstance() {
+        FlyingBirdLaunchFragment fragment = new FlyingBirdLaunchFragment();
         return fragment;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_animation, container, false);
+        final View view = inflater.inflate(R.layout.fragment_flying_bird_launch, container, false);
 
         view.findViewById(R.id.button_start_bird_anim).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), AnimationsActivity.class),
+                startActivity(new Intent(getActivity(), FlyingBirdDemoActivity.class),
                         ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view.findViewById(R.id.bird), "bird_anim").toBundle());
             }
         });

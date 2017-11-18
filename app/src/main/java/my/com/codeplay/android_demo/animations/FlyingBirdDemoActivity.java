@@ -29,7 +29,7 @@ import android.widget.ImageView;
 
 import my.com.codeplay.android_demo.R;
 
-public class AnimationsActivity extends AppCompatActivity
+public class FlyingBirdDemoActivity extends AppCompatActivity
         implements Animation.AnimationListener {
     private ImageView ivBird;
     private ImageButton ibStart;
@@ -46,7 +46,7 @@ public class AnimationsActivity extends AppCompatActivity
         }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animations);
+        setContentView(R.layout.activity_flying_bird_demo);
 
         animLeftToRight = AnimationUtils.loadAnimation(this, R.anim.bird_fly_left_to_right);
         animLeftToRight.setAnimationListener(this);
@@ -86,6 +86,13 @@ public class AnimationsActivity extends AppCompatActivity
                 flyingloop.stop();
             flyingloop = null;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (isFlying)
+            return;
+        super.onBackPressed();
     }
 
     @Override

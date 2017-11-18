@@ -33,6 +33,20 @@
         <item>item 4</item>
         <item>item 5</item>
     </string-array>
+    <string name="text_switcher">TextSwitcher</string>
+    <string name="text_switcher_desc">A widget that animates label on screen.</string>
+    <string name="text_switcher_caption">At CodePlay, we thrive on</string>
+    <string-array name="text_switcher_texts">
+        <item>Anything about Android</item>
+        <item>Creativity</item>
+        <item>Doing the Best</item>
+        <item>Innovation</item>
+        <item>Inspiring people</item>
+        <item>Out-of-the-box Thinking</item>
+        <item>Sharing of Knowledge</item>
+        <item>Staying Focus</item>
+        <item>Tackling Challenges</item>
+    </string-array>
     <string name="text_selection">Custom Actions in Text Selection</string>
     <string name="text_selection_desc">Display text selection actions such as Cut, Copy, and Paste for selected text.</string>
     <string name="text_selection_long_desc">Starting from Android 6.0 (API 23),
@@ -40,6 +54,7 @@
         \n\nIn devices running Android 6.0 (API 23), the framework able to display the selection actions in either
         floating toolbar or action bar mode, while on devices running Android 5.1 (API 22) or lower, only the
         latter is supported.
+        \n\n*Long click on any text to bring up the text selection actions.
     </string>
     <string name="layouts">Layouts (ViewGroups)</string>
     <string name="framelayout">FrameLayout</string>
@@ -121,6 +136,48 @@
     <string name="notification_desc">An user interface element that display outside an app to indicate an event has occurred which user can view and respond to it by dragging down the status bar to open the notification drawer.</string>
     <string name="notify">Notify</string>
     <string name="animations">Animations</string>
+    <string name="flying_bird_demo">Flying Bird Demo</string>
+    <string name="view_animation">View Animation</string>
+    <string name="view_animation_desc">Demonstrate the usage of View animation and Drawable animation.</string>
+    <string name="flipping">Content Flipping</string>
+    <string name="property_animation">Property Animation</string>
+    <string name="property_animation_desc">Demonstrate the usage of Property animation.</string>
+    <string name="android_development">I am new to Android Development</string>
+    <string name="android_development_desc">This training is designed primarily for Software Developers,
+        Software Engineers and other IT professionals who are interested to learn to get start on
+        building Android apps incorporating with most of the key aspects of the platform using the
+        official integrated development environment (IDE) with latest Android software development
+        kit (SDK).
+
+        \n\nParticipants who have completed this training may consider to advance their learning by
+        attending the Post Android Development training. Subjects offered from both training cover
+        most exam content required to sit for the Associate Android Developer certification.
+    </string>
+    <string name="post_android_development">I am ready for Post Android Development</string>
+    <string name="post_android_development_desc">This training is designed primarily for entry-level
+        Android developer who are intended to advance their knowledge to improve the quality and
+        better optimize on the development of their applications on Android platforms.
+
+        \n\nBy completing this training and equal with the fundamental knowledge of building Android
+        apps incorporating with most of the key aspects of the platform, participants are ready to
+        sit for the Associate Android Developer certification.
+    </string>
+    <string name="text_switching">Text Switching</string>
+    <string name="viewpropertyanimator">ViewPropertyAnimator</string>
+    <string name="viewpropertyanimator_desc">Demonstrate the usage of ViewPropertyAnimator to fade in/out and translate a TextView.</string>
+    <string name="interpolator">Interpolator</string>
+    <string-array name="interpolators">
+        <item>LinearInterpolator</item>
+        <item>AccelerateInterpolator</item>
+        <item>DecelerateInterpolator</item>
+        <item>AccelerateDecelerateInterpolator</item>
+        <item>AnticipateInterpolator</item>
+        <item>AnticipateOvershootInterpolator</item>
+        <item>OvershootInterpolator</item>
+        <item>BounceInterpolator</item>
+        <item>CycleInterpolator</item>
+    </string-array>
+    <string name="interpolator_desc">Demonstrate the various effects of interpolator via View animation.</string>
     <string name="components">Components</string>
     <string name="service">Service</string>
     <string name="service_desc">A component that perform long-running operations / remote processes in the background.</string>

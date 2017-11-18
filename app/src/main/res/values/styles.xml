@@ -11,7 +11,7 @@
         <!-- Color applies to UI controls such as EditText, Checkbox -->
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:textColor">@android:color/primary_text_light</item>
+        <!-- <item name="android:textColor">@android:color/primary_text_light</item> -->
     </style>
 
     <style name="AppTheme.NoActionBar">

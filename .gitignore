@@ -1,4 +1,3 @@
-.DS_Store
 .externalNativeBuild
 
 # Built application files
@@ -49,3 +48,12 @@ import-summary.txt
 
 # Keystore files
 *.jks
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

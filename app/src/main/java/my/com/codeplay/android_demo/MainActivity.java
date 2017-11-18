@@ -18,7 +18,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 
-import my.com.codeplay.android_demo.animations.AnimationsFragment;
 import my.com.codeplay.android_demo.notifications.NotificationsFragment;
 import my.com.codeplay.android_demo.sensor.SensorDemoFragment;
 import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity
                         fragment = NotificationsFragment.newInstance();
                         break;
                     case R.id.animation:
-                        fragment = AnimationsFragment.newInstance();
+                        fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_ANIMATIONS);
                         break;
                     case R.id.components:
                         fragment = DemoListFragment.newInstance(DemoListFragment.TYPE_COMPONENTS);
@@ -108,7 +107,7 @@ public class MainActivity extends AppCompatActivity
                     fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
                     // and start a new fragment
-                    getSupportFragmentManager().beginTransaction()
+                    fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                             .replace(R.id.master_container, fragment)
                             .addToBackStack(null)

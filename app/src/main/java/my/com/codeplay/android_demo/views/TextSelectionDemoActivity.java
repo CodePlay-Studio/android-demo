@@ -40,7 +40,9 @@ public class TextSelectionDemoActivity extends AppCompatActivity {
             inflater.inflate(R.menu.text_selection, menu);
             // the default selection actions come with Copy, Share, and Select All,
             // may remove these actions by calling removeItem on the Menu with its
-            // id, for example see the line below:
+            // id, for example see the lines below:
+            /*menu.removeItem(android.R.id.copy);*/
+            /*menu.removeItem(android.R.id.shareText);*/
             /*menu.removeItem(android.R.id.selectAll);*/
             return true;
         }

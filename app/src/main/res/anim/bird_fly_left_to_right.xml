@@ -21,11 +21,8 @@
   reproduced in the documentation and/or other materials provided
   with the redistributions in binary form.
 -->
-<set xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <translate 
-        android:fromYDelta="0%p" android:toYDelta="0%p" 
-        android:fromXDelta="0%p" android:toXDelta="100%p"
-        android:duration="6000" android:fillAfter="false" />
-
-</set>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromYDelta="0%p" android:toYDelta="0%p"
+    android:fromXDelta="0%p" android:toXDelta="100%p"
+    android:duration="6000" android:fillAfter="false" />

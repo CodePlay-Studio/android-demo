@@ -27,6 +27,10 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import my.com.codeplay.android_demo.animations.FlippingActivity;
+import my.com.codeplay.android_demo.animations.FlyingBirdLaunchActivity;
+import my.com.codeplay.android_demo.animations.InterpolatorDemoActivity;
+import my.com.codeplay.android_demo.animations.TextSwitchingActivity;
 import my.com.codeplay.android_demo.components.BroadcastReceiverActivity;
 import my.com.codeplay.android_demo.components.ServiceDemoActivity;
 import my.com.codeplay.android_demo.multimedia.VideoPlaybackActivity;
@@ -49,10 +53,11 @@ import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
 
 public class DemoListFragment extends ListFragment {
     public static final int TYPE_VIEWGROUPS = 1;
-    public static final int TYPE_COMPONENTS = 2;
-    public static final int TYPE_MULTIMEDIA = 3;
-    public static final int TYPE_NETWORK = 4;
-    public static final int TYPE_STORAGES = 5;
+    public static final int TYPE_ANIMATIONS = 2;
+    public static final int TYPE_COMPONENTS = 3;
+    public static final int TYPE_MULTIMEDIA = 4;
+    public static final int TYPE_NETWORK = 5;
+    public static final int TYPE_STORAGES = 6;
     private static final String EXTRA_TYPE = "android_demo.demolistfragment.extra.TYPE";
 
     private List<ListItem> itemList;
@@ -114,6 +119,12 @@ public class DemoListFragment extends ListFragment {
                         R.string.gridview_short_desc, GridViewActivity.class, 0));
                 itemList.add(new ListItem(0, R.string.recyclerview, R.string.recyclerview_short_desc,
                         RecyclerViewActivity.class, 0));
+                break;
+            case TYPE_ANIMATIONS:
+                itemList.add(new ListItem(0, R.string.flying_bird_demo, R.string.view_animation_desc, FlyingBirdLaunchActivity.class, 0));
+                itemList.add(new ListItem(0, R.string.flipping, R.string.property_animation_desc, FlippingActivity.class, 0));
+                itemList.add(new ListItem(0, R.string.text_switching, R.string.viewpropertyanimator_desc, TextSwitchingActivity.class, 0));
+                itemList.add(new ListItem(0, R.string.interpolator, R.string.interpolator_desc, InterpolatorDemoActivity.class, 0));
                 break;
             case TYPE_COMPONENTS:
                 itemList.add(new ListItem(0, R.string.service, R.string.service_desc,
