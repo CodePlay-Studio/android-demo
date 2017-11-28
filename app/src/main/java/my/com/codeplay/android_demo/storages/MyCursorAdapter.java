@@ -60,6 +60,7 @@ public class MyCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         ViewHolder viewHolder = (ViewHolder) view.getTag();
+
         viewHolder.text.setText(cursor.getString(nameColIndex));
         viewHolder.image.setImageResource(cursor.getInt(imageColIndex));
     }

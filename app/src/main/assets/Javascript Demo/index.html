@@ -1,0 +1,41 @@
+<!--
+  ~ Copyright 2017 (C) CodePlay Studio. All rights reserved.
+  ~
+  ~ All source code within this app is licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License. You may obtain a copy of the
+  ~ License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software distributed under the
+  ~ License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+  ~ either express or implied. See the License for the specific language governing permissions
+  ~ and limitations under the License.
+  -->
+
+<html>
+    <head>
+        <title>Android Phone</title>
+
+        <style type="text/css">
+            tab { padding-left: 4.2em; }
+            tab-small { padding-left: 1em; }
+        </style>
+
+        <script language="javascript">
+        	function getDeviceInfo() {
+        		var device = JSON.parse(DeviceInfo.get());
+        		document.getElementById("model").innerHTML = device.model;
+        		document.getElementById("manufacturer").innerHTML = device.manufacturer;
+        	}
+        </script>
+    </head>
+    <body>
+    	<p>
+            <u>Device Info</u><br/>
+            Model<tab>: <span id="model">Unknown</span></tab><br/>
+            Manufacturer<tab-small>: <span id="manufacturer">Unknown</span></tab-small>
+        </p>
+    	<p><button type="button" onClick="getDeviceInfo()">Get Device Info</button></p>
+    </body>
+</html>

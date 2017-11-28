@@ -68,7 +68,8 @@ public class ViewFlipperActivity extends AppCompatActivity {
         super.onStart();
 
         //gestureDetector = new GestureDetector(this);
-        gestureDetector = new GestureDetector(this, new GestureDetector.OnGestureListener() {
+        gestureDetector = new GestureDetector(this,
+                new GestureDetector.OnGestureListener() {
             @Override
             public boolean onDown(MotionEvent e) {
                 return false;

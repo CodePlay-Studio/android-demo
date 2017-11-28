@@ -26,6 +26,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -33,6 +34,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import my.com.codeplay.android_demo.R;
 
@@ -44,6 +48,7 @@ import my.com.codeplay.android_demo.R;
 public class WebViewDemoActivity extends AppCompatActivity {
 	// set the default URL to the website from assets directory
 	private static final String DEFAULT_WEBSITE_FROM_ASSETS = "file:///android_asset/Home.html";
+	private static final String JAVASCRIPT_HTML_FROM_ASSETS = "file:///android_asset/Javascript Demo/index.html";
     private static final String HTTP_PROTOCOL = "http://";
 	private EditText etUrl;
 	private WebView webView;
@@ -67,6 +72,8 @@ public class WebViewDemoActivity extends AppCompatActivity {
                     String url = etUrl.getText().toString().trim();
                     if (TextUtils.isEmpty(url)) {
                         showSnackbar("Please enter a valid URL.");
+                    } else if (url.equalsIgnoreCase("javascript")) {
+                        webView.loadUrl(JAVASCRIPT_HTML_FROM_ASSETS);
                     } else {
                         if (!url.startsWith(HTTP_PROTOCOL)) {
                             etUrl.setText(url = HTTP_PROTOCOL + url);
@@ -112,6 +119,8 @@ public class WebViewDemoActivity extends AppCompatActivity {
         });
         // enable JavaScript
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.addJavascriptInterface(new DeviceInfo(), "DeviceInfo");
+
         /* Example to load from an HTML string
         String htmlString = "<html><body>Load from <b>HTML</b> string</body></html>";
         webview.loadData(htmlString, "text/html", null);
@@ -143,6 +152,17 @@ public class WebViewDemoActivity extends AppCompatActivity {
         ((TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text))
                 .setTextColor(ContextCompat.getColor(this, android.R.color.white));
         snackbar.show();
+    }
+
+    // For accessing device info via Javascript Interface
+    public class DeviceInfo {
+        @JavascriptInterface
+	    public String get() throws JSONException {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("model", Build.MODEL);
+            jsonObject.put("manufacturer", Build.MANUFACTURER);
+            return jsonObject.toString();
+        }
     }
 }
 
