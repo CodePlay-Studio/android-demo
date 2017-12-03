@@ -43,6 +43,7 @@ import my.com.codeplay.android_demo.viewgroups.BottomSheetsActivity;
 import my.com.codeplay.android_demo.viewgroups.GridViewActivity;
 import my.com.codeplay.android_demo.viewgroups.ListViewActivity;
 import my.com.codeplay.android_demo.viewgroups.RecyclerViewActivity;
+import my.com.codeplay.android_demo.viewgroups.StackViewActivity;
 import my.com.codeplay.android_demo.viewgroups.TabLayoutActivity;
 import my.com.codeplay.android_demo.viewgroups.ViewFlipperActivity;
 import my.com.codeplay.android_demo.viewgroups.ViewGroupsActivity;
@@ -113,10 +114,12 @@ public class DemoListFragment extends ListFragment {
                         R.string.tablayout_desc_short, TabLayoutActivity.class, 0));
                 itemList.add(new ListItem(R.drawable.ic_viewflipper_black_48dp, R.string.viewflipper,
                         R.string.viewflipper_short_desc, ViewFlipperActivity.class, 0));
-                itemList.add(new ListItem(R.drawable.ic_listview_black_48dp, R.string.listview,
-                        R.string.listview_short_desc, ListViewActivity.class, 0));
                 itemList.add(new ListItem(R.drawable.ic_gridview_black_48dp, R.string.gridview,
                         R.string.gridview_short_desc, GridViewActivity.class, 0));
+                itemList.add(new ListItem(R.drawable.ic_listview_black_48dp, R.string.listview,
+                        R.string.listview_short_desc, ListViewActivity.class, 0));
+                itemList.add(new ListItem(0, R.string.stackview,
+                        R.string.stackview_short_desc, StackViewActivity.class, 0));
                 itemList.add(new ListItem(0, R.string.recyclerview, R.string.recyclerview_short_desc,
                         RecyclerViewActivity.class, 0));
                 break;

@@ -48,13 +48,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:ellipsize="end"
                 android:lines="1"
                 android:maxLines="1"
+                android:text="Hello World"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                android:text="Hello World"/>
+                android:typeface="serif"
+                android:textStyle="bold"/>
+            <!--
+                Available typefaces: normal, sans, serif, monospace
+                Available text styles: normal, bold, italic
+            -->
 
         </RelativeLayout>
 
@@ -331,6 +337,8 @@
             <!--
                 Use android:format12Hour="hh:mm:ss a" or android:format24Hour="hh:mm:ss a"
                 to set the time patterns and format to be displayed.
+
+                Use android:timeZone="GMT+000" to set the time zone.
              -->
 
         </RelativeLayout>

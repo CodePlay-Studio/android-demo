@@ -98,7 +98,7 @@ public final class Dummy {
             "Totemchase"
     };
 
-    public static final int[] DRAWABLES = {
+    public static final Integer[] DRAWABLES = {
             R.drawable.android_s1_albino,
             R.drawable.android_s1_apk2008,
             R.drawable.android_s1_copperbot,

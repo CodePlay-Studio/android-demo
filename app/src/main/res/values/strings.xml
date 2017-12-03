@@ -107,10 +107,15 @@
     <string name="tablayout_desc_short">A horizontal layout to display tabs.</string>
     <string name="viewflipper">ViewFlipper</string>
     <string name="viewflipper_short_desc">A layout that animates between two or more views.</string>
-    <string name="listview">ListView</string>
-    <string name="listview_short_desc">A layout displays a list of scrollable items vertically.</string>
     <string name="gridview">GridView</string>
     <string name="gridview_short_desc">A layout displays items in two-dimensional scrollable grid.</string>
+    <string name="listview">ListView</string>
+    <string name="listview_short_desc">A layout displays a list of scrollable items vertically.</string>
+    <string name="stackview">StackView</string>
+    <string name="stackview_short_desc">An AdapterView that displayes list of items in a stack of cards
+        which can be swiped away towards the corner of the screen or navigate to the next by
+        flipping these virtual cards.
+    </string>
     <string name="recyclerview">RecyclerView (API 21)</string>
     <string name="recyclerview_short_desc">A more advanced and flexible ListView/GridView designed for displaying large data sets efficiently.</string>
     <string name="notifications">Notifications</string>

@@ -21,6 +21,7 @@ import android.media.MediaPlayer;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 /**
  * A started service only stops itself when it calls stopSelf() or stopService() is
@@ -75,13 +76,15 @@ public class MediaPlayerService extends Service {
          * If its process is killed while doing that check, the service will not be restarted until
          * the alarm goes off.
          */
-        return START_STICKY;
-        //return START_NOT_STICKY;
+        //return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+
+        Log.d(MediaPlayerService.class.getSimpleName(), "onDestroy() executes...");
 
         if (player!=null) {
             if (player.isPlaying())

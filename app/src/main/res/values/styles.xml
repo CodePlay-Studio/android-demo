@@ -1,5 +1,7 @@
+<!-- A Style specifies the appearance of Views, it defines the attributes' values such as width, height,
+color, background and so on, to be applied to Views. Whereas, Themes are used to group a set of styles
+to be applied on the whole application or an individual Activity. -->
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -32,16 +34,20 @@
         <item name="android:background">@drawable/cell</item>
         <item name="android:padding">4dp</item>
     </style>
+    <!-- Using a '.' to denote for inheritance. -->
     <style name="CellText.Normal">
 
     </style>
+
     <style name="CellText.PublicHoliday">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#FF0000</item>
     </style>
+
     <style name="CellText.SchoolHoliday">
         <item name="android:background">@drawable/cell_school_holiday</item>
     </style>
+
     <style name="CellText.PublicHoliday.Both">
         <item name="android:background">@drawable/cell_school_holiday</item>
     </style>
