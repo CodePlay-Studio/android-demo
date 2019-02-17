@@ -65,6 +65,18 @@ public class ListViewActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            /* Without ViewHolder pattern * /
+            convertView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_listview, parent, false);
+
+            ImageView image = (ImageView) convertView.findViewById(R.id.image);
+            TextView text  = (TextView) convertView.findViewById(R.id.text);
+
+            image.setImageResource(Dummy.DRAWABLES[position]);
+            text.setText(Dummy.NAMES[position]);
+            // */
+
+            /* With ViewHolder pattern */
             ViewHolder holder;
 
             if (convertView==null) {
@@ -81,7 +93,7 @@ public class ListViewActivity extends AppCompatActivity {
 
             holder.image.setImageResource(Dummy.DRAWABLES[position]);
             holder.text.setText(Dummy.NAMES[position]);
-
+            // */
             return convertView;
         }
     }

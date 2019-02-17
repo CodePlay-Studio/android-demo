@@ -27,4 +27,5 @@
         android:pivotX="500%" android:pivotY="0%"
         android:duration="1000" android:fillAfter="true"
         android:startOffset="2000"/>
+
 </set>

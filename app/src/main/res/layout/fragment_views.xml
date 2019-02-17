@@ -82,7 +82,8 @@
                 android:hint="Enter here"
                 android:imeOptions="actionDone"
                 android:inputType="text"
-                android:lines="1"/>
+                android:lines="3"
+                />
             <!--
                Use android:ems to make the EditText be exactly this many ems wide.
                The ems is simply the font size. In an element with a 2in font, 1em thus means 2in.
@@ -385,7 +386,7 @@
                 android:id="@+id/datepicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DatePicker"/>
+                android:text="DatePicker" />
 
             <DatePicker
                 android:layout_width="wrap_content"

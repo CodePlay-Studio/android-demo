@@ -76,9 +76,7 @@ public class ViewFlipperActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onShowPress(MotionEvent e) {
-
-            }
+            public void onShowPress(MotionEvent e) { }
 
             @Override
             public boolean onSingleTapUp(MotionEvent e) {

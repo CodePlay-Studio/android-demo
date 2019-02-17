@@ -133,14 +133,12 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 				.setPositiveButton("Positive", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
 						showToastMsg("Positive button clicked");
 					}
 				})
 				.setNeutralButton("Neutral", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
 						showToastMsg("Neutral button clicked");
 					}
 				})
@@ -155,7 +153,6 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 				.setItems(R.array.spinner_items, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
 						showToastMsg("Item " + (which+1) + " selected");
 					}
 				})
@@ -247,7 +244,6 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            // Todo process the date chosen here
         }
     }
 
@@ -268,7 +264,6 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 
         @Override
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            // Todo process the time chosen here
         }
     }
 }

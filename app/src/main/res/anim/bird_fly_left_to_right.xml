@@ -26,3 +26,4 @@
     android:fromYDelta="0%p" android:toYDelta="0%p"
     android:fromXDelta="0%p" android:toXDelta="100%p"
     android:duration="6000" android:fillAfter="false" />
+

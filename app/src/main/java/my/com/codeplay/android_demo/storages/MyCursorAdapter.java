@@ -47,7 +47,8 @@ public class MyCursorAdapter extends CursorAdapter {
         nameColIndex = cursor.getColumnIndexOrThrow(DatabaseProvider.COL_NAME);
         imageColIndex = cursor.getColumnIndexOrThrow(DatabaseProvider.COL_IMAGE);
 
-        View view = LayoutInflater.from(context).inflate(R.layout.item_cardview, parent, false);
+        View view = LayoutInflater.from(context).inflate(
+                R.layout.item_cardview, parent, false);
 
         ViewHolder viewHolder = new ViewHolder();
         viewHolder.text = (TextView) view.findViewById(R.id.text);

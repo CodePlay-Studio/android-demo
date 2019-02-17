@@ -35,7 +35,6 @@ public class BroadcastReceiverActivity extends AppCompatActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            // TODO Auto-generated method stub
             super.onReceive(context, intent);
 
             NetworkInfo info = null;

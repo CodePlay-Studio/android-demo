@@ -16,7 +16,6 @@
 package my.com.codeplay.android_demo.components;
 
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -64,7 +63,8 @@ public class ServiceDemoActivity extends AppCompatActivity {
     private ServiceConnection mpServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            MediaPlayerService.MyLocalBinder binder = (MediaPlayerService.MyLocalBinder) service;
+            MediaPlayerService.MyLocalBinder binder =
+                    (MediaPlayerService.MyLocalBinder) service;
             playerService = binder.getService();
             isBound = true;
 
@@ -103,21 +103,24 @@ public class ServiceDemoActivity extends AppCompatActivity {
     public void onMediaPlayerButtonClick(View v) {
         switch (v.getId()) {
             case R.id.button_play:
-                Intent mediaPlayerIntent = new Intent(this, MediaPlayerService.class);
-                mediaPlayerIntent.putExtra(MediaPlayerService.EXTRA_SONG_ID, R.raw.mungkin_nanti);
+                Intent mediaPlayerIntent = new Intent(this,
+                        MediaPlayerService.class);
+                mediaPlayerIntent.putExtra(MediaPlayerService.EXTRA_SONG_ID,
+                        R.raw.mungkin_nanti);
 
-                //startService(mediaPlayerIntent);
+                startService(mediaPlayerIntent);
 
-                if (isBound) {
+               /* if (isBound) {
                     playerService.playSong();
                 } else {
-                    bindService(mediaPlayerIntent, mpServiceConnection, Context.BIND_AUTO_CREATE);
-                }
+                    bindService(mediaPlayerIntent,
+                            mpServiceConnection, Context.BIND_AUTO_CREATE);
+                }*/
                 break;
             case R.id.button_stop:
-                //stopService(new Intent(this, MediaPlayerService.class));
+                stopService(new Intent(this, MediaPlayerService.class));
 
-                unbindPlayer();
+                //unbindPlayer();
                 break;
         }
     }

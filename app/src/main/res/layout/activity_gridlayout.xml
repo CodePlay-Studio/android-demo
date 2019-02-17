@@ -83,10 +83,12 @@
         app:layout_columnWeight="1"
         android:text="1"
         style="@style/CellText.SchoolHoliday"/>
+
     <TextView
         app:layout_columnWeight="1"
         android:text="2"
         style="@style/CellText.SchoolHoliday"/>
+
     <TextView
         app:layout_columnWeight="1"
         android:text="3"

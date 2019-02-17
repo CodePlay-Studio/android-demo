@@ -40,7 +40,7 @@ public class FlyingBirdDemoActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        // set the below window flag to request shared element transition between activities.
+        // set the below window flag to enable shared element transition between activities.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         }

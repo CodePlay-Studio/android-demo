@@ -32,7 +32,6 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 	private Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-			// TODO Auto-generated method stub
 			progressBar.setProgress(msg.arg1);
 			handler.postDelayed(run, 500);
 		}
@@ -40,7 +39,6 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 	private Runnable run = new Runnable() {
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub
 			index += 10;
 
 			Message msg = handler.obtainMessage();
@@ -74,7 +72,6 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 					try {
 						Thread.sleep(500);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -115,9 +112,9 @@ public class ThreadsDemoActivity extends AppCompatActivity {
     }
     
     private class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
+
 		@Override
 		protected void onPreExecute() {
-			// TODO Auto-generated method stub
 			super.onPreExecute();
 			
 			progressBar.setProgress(index = 0);
@@ -125,7 +122,6 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 
 		@Override
 		protected Boolean doInBackground(Void... arg0) {
-			// TODO Auto-generated method stub
 			while (index<100) {
 				index += 10;
 				this.publishProgress(index);
@@ -136,7 +132,6 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 				try {
 					Thread.sleep(500);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -145,7 +140,6 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 		
 		@Override
 		protected void onProgressUpdate(Integer... values) {
-			// TODO Auto-generated method stub
 			super.onProgressUpdate(values);
 
 			progressBar.setProgress(values[0]);
@@ -153,7 +147,6 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 		
 		@Override
 		protected void onPostExecute(Boolean result) {
-			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 
 			isLoading = false;

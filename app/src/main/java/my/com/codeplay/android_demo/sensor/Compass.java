@@ -42,7 +42,6 @@ public class Compass extends View {
 
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-		// TODO Auto-generated method stub
 		super.onSizeChanged(w, h, oldw, oldh);
         Log.d(TAG, "width=" + w + " and height=" + h);
         width = w;

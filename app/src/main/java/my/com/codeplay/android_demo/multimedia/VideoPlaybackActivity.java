@@ -50,7 +50,6 @@ public class VideoPlaybackActivity extends Activity {
 
 				@Override
 				public void onCompletion(MediaPlayer mp) {
-					// TODO Auto-generated method stub
 					videoView.seekTo(0);
 				}
 

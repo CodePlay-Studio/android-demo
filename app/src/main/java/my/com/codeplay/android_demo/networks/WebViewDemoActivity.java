@@ -64,6 +64,7 @@ public class WebViewDemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
 
+
         etUrl = (EditText) findViewById(R.id.edittext);
         etUrl.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override

@@ -41,7 +41,8 @@ public class FlyingBirdLaunchFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), FlyingBirdDemoActivity.class),
-                        ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view.findViewById(R.id.bird), "bird_anim").toBundle());
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),
+                                view.findViewById(R.id.bird), "bird_anim").toBundle());
             }
         });
 

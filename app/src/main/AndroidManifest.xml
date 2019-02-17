@@ -25,7 +25,8 @@
 
         <activity android:name=".views.TextActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
 
         <activity android:name=".views.TextSwitcherDemoActivity"
             android:label="@string/text_switcher"
@@ -82,7 +83,7 @@
         <activity android:name=".animations.FlyingBirdDemoActivity"
             android:label="@string/view_animation"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity android:name=".animations.FlippingActivity"
             android:label="@string/property_animation"
@@ -147,7 +148,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="http" />
             </intent-filter>
