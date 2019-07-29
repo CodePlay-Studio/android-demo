@@ -77,6 +77,11 @@ public class BroadcastReceiverActivity extends AppCompatActivity {
             }
         }
     };
+
+
+
+
+
     private TextView tv;
     private Drawable dConnected, dDisconnected;
 

@@ -19,11 +19,15 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -165,11 +169,20 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 		 * Using NotificationCompat and its Builder in the Support Library to support for
 		 * a wide range of platforms.
 		 */
-		NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity());
+		//NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity());
+		/*
+		 * On Android Oreo (8.0) and above, it is required to set the channelId property by using a
+		 * NotificationChannel.
+		 */
+		final String channelId = "ChannelId1";
+		NotificationCompat.Builder builder
+				= new NotificationCompat.Builder(requireContext(), channelId);
+
 		// At bare minimum, a notification must include a small icon, a title and a detail text.
 		builder.setSmallIcon(R.mipmap.ic_launcher)
 			.setContentTitle("Notification Title")
-			.setContentText("Notification message...");
+			.setContentText("Notification message...")
+			.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
 
 		/*
 		 * Below code show an example to set a custom layout for a notification.
@@ -207,6 +220,8 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 		 *  that starts an Activity.
 		 */
 		Intent resultIntent = new Intent(getActivity(), MainActivity.class);
+		resultIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP |
+				Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		// To perform a broadcast via pending intent, use getBroadcast(...)
 		PendingIntent resultPendingIntent = PendingIntent.getActivity(
 				getActivity(),
@@ -214,17 +229,38 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 				resultIntent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
 		builder.setContentIntent(resultPendingIntent);
-		
+
+		NotificationManager notificationMgr
+				= (NotificationManager) requireContext().getSystemService(NOTIFICATION_SERVICE);
+		// Setting the channel Id for Android Oreo (8.0) and above
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			NotificationChannel channel = notificationMgr.getNotificationChannel(channelId);
+			if (channel==null) {
+				AudioAttributes attributes = new AudioAttributes.Builder()
+						.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+						.setUsage(AudioAttributes.USAGE_NOTIFICATION)
+						.build();
+
+				channel = new NotificationChannel(channelId,
+						"Channel title 1",
+						NotificationManager.IMPORTANCE_DEFAULT);
+				channel.setDescription("Channel description");
+				channel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION),
+						attributes);
+
+				notificationMgr.createNotificationChannel(channel);
+			}
+			builder.setChannelId(channelId);
+		}
+
 		// lines of code below issue an notification
 		Notification notification = builder.build();
-		notification.defaults |= Notification.DEFAULT_SOUND;
+		//notification.defaults |= Notification.DEFAULT_SOUND;
 		// cancel the notification when user response to it
-		notification.flags |= Notification.FLAG_AUTO_CANCEL;
+		//notification.flags |= Notification.FLAG_AUTO_CANCEL;
 
 		// define a unique id for each notification to enable multiple notifications from the same app.
 		int notificationId = 1;
-		NotificationManager notificationMgr
-				= (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
 		notificationMgr.notify(notificationId, notification);
 	}
 
@@ -244,6 +280,7 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
         }
     }
 

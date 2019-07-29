@@ -28,7 +28,8 @@ import my.com.codeplay.android_demo.R;
 @SuppressLint("SdCardPath")
 @SuppressWarnings("unused")
 public class VideoPlaybackActivity extends Activity {
-	private static final String RAW_PATH = "android.resource://my.com.codeplay.android_demo/raw/google_holiday_doodle_2014";
+	private static final String RAW_PATH
+			= "android.resource://my.com.codeplay.android_demo/raw/google_holiday_doodle_2014";
 	// example of source path in a SDCard
 	private static final String SRC_PATH = "/sdcard/filename.3gp";
 	// example of source from a streaming server
@@ -45,6 +46,7 @@ public class VideoPlaybackActivity extends Activity {
 			videoView = (VideoView) findViewById(R.id.VideoView);
 			videoView.setVideoURI(uri);
 			//videoView.setVideoPath(SRC_PATH);
+
 			videoView.setMediaController(new MediaController(this));
 			videoView.setOnCompletionListener(new OnCompletionListener() {
 

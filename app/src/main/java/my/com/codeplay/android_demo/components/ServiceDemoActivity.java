@@ -16,6 +16,7 @@
 package my.com.codeplay.android_demo.components;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -90,7 +91,7 @@ public class ServiceDemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
 
-        tvTime = (TextView) findViewById(R.id.text);
+        tvTime = findViewById(R.id.text);
     }
 
     @Override
@@ -105,22 +106,20 @@ public class ServiceDemoActivity extends AppCompatActivity {
             case R.id.button_play:
                 Intent mediaPlayerIntent = new Intent(this,
                         MediaPlayerService.class);
-                mediaPlayerIntent.putExtra(MediaPlayerService.EXTRA_SONG_ID,
-                        R.raw.mungkin_nanti);
+                mediaPlayerIntent.putExtra(MediaPlayerService.EXTRA_SONG_ID, R.raw.mungkin_nanti);
+                //startService(mediaPlayerIntent);
 
-                startService(mediaPlayerIntent);
-
-               /* if (isBound) {
+                if (isBound) {
                     playerService.playSong();
                 } else {
                     bindService(mediaPlayerIntent,
                             mpServiceConnection, Context.BIND_AUTO_CREATE);
-                }*/
+                }
                 break;
             case R.id.button_stop:
-                stopService(new Intent(this, MediaPlayerService.class));
+                //stopService(new Intent(this, MediaPlayerService.class));
 
-                //unbindPlayer();
+                unbindPlayer();
                 break;
         }
     }

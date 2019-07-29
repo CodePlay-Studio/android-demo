@@ -50,6 +50,10 @@
 
     SCROLL_FLAG_EXIT_UNTIL_COLLAPSED  : When exiting (scrolling off screen), the view will be scrolled
                                         until it is 'collapsed' (its minHeight).
+
+    The latter four flags, snap, enterAlways, enterAlwaysCollapsed and exitUntiCollapsed must combine
+    with scroll flag, when set alone with any one of these flags, the bahaviour is just same as when
+    no flag is set.
      -->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

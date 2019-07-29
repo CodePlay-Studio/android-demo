@@ -110,22 +110,22 @@ public class ThreadsDemoActivity extends AppCompatActivity {
         isLoading = false;
         isAsyncTask = false;
     }
-    
-    private class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
+
+    private class MyAsyncTask extends AsyncTask<Void, Integer, Void> {
 
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			
+
 			progressBar.setProgress(index = 0);
 		}
 
 		@Override
-		protected Boolean doInBackground(Void... arg0) {
+		protected Void doInBackground(Void... arg0) {
 			while (index<100) {
 				index += 10;
 				this.publishProgress(index);
-				
+
 				/*
 				 * the below code stimulates a task which takes 0.5sec
 				 */
@@ -146,7 +146,7 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 		}
 		
 		@Override
-		protected void onPostExecute(Boolean result) {
+		protected void onPostExecute(Void result) {
 			super.onPostExecute(result);
 
 			isLoading = false;

@@ -40,13 +40,15 @@ public class ViewFlipperActivity extends AppCompatActivity {
 
         viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
         ImageButton btnPrev = (ImageButton) findViewById(R.id.button_prev);
+        ImageButton btnNext = (ImageButton) findViewById(R.id.button_next);
+
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewFlipper.showPrevious();
             }
         });
-        ImageButton btnNext = (ImageButton) findViewById(R.id.button_next);
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +56,12 @@ public class ViewFlipperActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
+
+
 
     /*
      * The below code is needed to enable flipping to switch the views between ViewFlipper.
@@ -90,7 +98,6 @@ public class ViewFlipperActivity extends AppCompatActivity {
 
             @Override
             public void onLongPress(MotionEvent e) {
-
             }
 
             @Override

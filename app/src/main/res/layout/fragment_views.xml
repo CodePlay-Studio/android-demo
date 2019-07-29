@@ -81,8 +81,9 @@
                 android:layout_centerInParent="true"
                 android:hint="Enter here"
                 android:imeOptions="actionDone"
-                android:inputType="text"
-                android:lines="3"
+                android:inputType="textNoSuggestions"
+                android:lines="1"
+                android:maxLines="1"
                 />
             <!--
                Use android:ems to make the EditText be exactly this many ems wide.
@@ -184,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Label"
-                    android:checked="true"/>
+                    android:checked="false"/>
 
                 <CheckBox
                     android:layout_width="wrap_content"

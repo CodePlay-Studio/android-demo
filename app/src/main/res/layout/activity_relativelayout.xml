@@ -37,12 +37,13 @@
         android:background="@color/colorAccent" />
     
     <View
+        android:id="@+id/bottomLeftBox"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:background="@color/colorAccent" />
-    
+
     <View
         android:id="@+id/center_view"
         android:layout_width="96dp"

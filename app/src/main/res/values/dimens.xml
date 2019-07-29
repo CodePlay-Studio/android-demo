@@ -17,4 +17,5 @@
 
     <dimen name="stroke">4dp</dimen>
     <dimen name="banner_padding">32dp</dimen>
+
 </resources>
