@@ -16,15 +16,14 @@
 package my.com.codeplay.android_demo.viewgroups;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import my.com.codeplay.android_demo.R;
 import my.com.codeplay.android_demo.data.Dummy;
@@ -43,7 +42,7 @@ public class ListViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview);
 
-        ListView listView = (ListView) findViewById(android.R.id.list);
+        ListView listView = findViewById(android.R.id.list);
         listView.setAdapter(new MyAdapter());
     }
 
@@ -54,23 +53,13 @@ public class ListViewActivity extends AppCompatActivity {
         }
 
         @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             /* Without ViewHolder pattern * /
             convertView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_listview, parent, false);
 
-            ImageView image = (ImageView) convertView.findViewById(R.id.image);
-            TextView text  = (TextView) convertView.findViewById(R.id.text);
+            ImageView image = convertView.findViewById(R.id.image);
+            TextView text  = convertView.findViewById(R.id.text);
 
             image.setImageResource(Dummy.DRAWABLES[position]);
             text.setText(Dummy.NAMES[position]);
@@ -84,8 +73,8 @@ public class ListViewActivity extends AppCompatActivity {
                         .inflate(R.layout.item_listview, parent, false);
 
                 holder = new ViewHolder();
-                holder.image = (ImageView) convertView.findViewById(R.id.image);
-                holder.text  = (TextView) convertView.findViewById(R.id.text);
+                holder.image = convertView.findViewById(R.id.image);
+                holder.text  = convertView.findViewById(R.id.text);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -95,6 +84,16 @@ public class ListViewActivity extends AppCompatActivity {
             holder.text.setText(Dummy.NAMES[position]);
             // */
             return convertView;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
         }
     }
 }

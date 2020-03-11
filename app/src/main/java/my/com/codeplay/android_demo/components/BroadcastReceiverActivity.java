@@ -20,10 +20,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
+import android.net.Network;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.widget.TextView;
 
@@ -41,10 +43,11 @@ public class BroadcastReceiverActivity extends AppCompatActivity {
 
             final ConnectivityManager cm = (ConnectivityManager)
                     context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            info = cm.getActiveNetworkInfo();
+            //info = cm.getActiveNetworkInfo();
 
-            /* Check only if the connection is specified to WIFI connection type
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            //* Check only if the connection is specified to WIFI connection type
+            if (android.os.Build.VERSION.SDK_INT
+                    >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 final Network[] networks = cm.getAllNetworks();
                 for (Network network : networks) {
                     info = cm.getNetworkInfo(network);

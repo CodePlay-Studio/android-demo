@@ -17,9 +17,9 @@ package my.com.codeplay.android_demo.views;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -69,10 +69,12 @@ public class TextSwitcherDemoActivity extends AppCompatActivity {
                 TextView textView = new TextView(TextSwitcherDemoActivity.this);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     textView.setTextAppearance(
-                            android.support.v7.appcompat.R.style.TextAppearance_AppCompat_Headline);
+                            //android.support.v7.appcompat.R.style.TextAppearance_AppCompat_Headline);
+                            androidx.appcompat.R.style.TextAppearance_AppCompat_Headline);
                 } else {
                     textView.setTextAppearance(TextSwitcherDemoActivity.this,
-                            android.support.v7.appcompat.R.style.TextAppearance_AppCompat_Headline);
+                            //android.support.v7.appcompat.R.style.TextAppearance_AppCompat_Headline);
+                            androidx.appcompat.R.style.TextAppearance_AppCompat_Headline);
                 }
                 textView.setTextColor(ContextCompat.getColor(
                         TextSwitcherDemoActivity.this, android.R.color.primary_text_dark));

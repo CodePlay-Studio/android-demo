@@ -17,13 +17,14 @@ package my.com.codeplay.android_demo.viewgroups;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import my.com.codeplay.android_demo.R;
 import my.com.codeplay.android_demo.data.Dummy;

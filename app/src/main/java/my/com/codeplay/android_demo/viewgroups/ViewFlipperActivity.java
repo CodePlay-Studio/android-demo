@@ -16,8 +16,9 @@
 package my.com.codeplay.android_demo.viewgroups;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -38,9 +39,9 @@ public class ViewFlipperActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewflipper);
 
-        viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
-        ImageButton btnPrev = (ImageButton) findViewById(R.id.button_prev);
-        ImageButton btnNext = (ImageButton) findViewById(R.id.button_next);
+        viewFlipper = findViewById(R.id.viewflipper);
+        ImageButton btnPrev = findViewById(R.id.button_prev);
+        ImageButton btnNext =  findViewById(R.id.button_next);
 
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +57,6 @@ public class ViewFlipperActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
-
 
     /*
      * The below code is needed to enable flipping to switch the views between ViewFlipper.

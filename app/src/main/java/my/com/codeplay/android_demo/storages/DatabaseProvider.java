@@ -25,7 +25,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.provider.BaseColumns;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import java.io.File;
 
@@ -44,7 +44,7 @@ public class DatabaseProvider extends ContentProvider {
 
     private class MySQLiteOpenHelper extends SQLiteOpenHelper {
         private static final String DATABASE_NAME = "database.db";
-        private static final int DATABASE_VERSION = 1;
+        private static final int DATABASE_VERSION = 2;
 
         public MySQLiteOpenHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -71,7 +71,6 @@ public class DatabaseProvider extends ContentProvider {
                     db.insert(TABLENAME, null, contentValues);
                 }
                 db.setTransactionSuccessful();
-
             } catch (SQLException e) {
                 e.printStackTrace();
             } finally {

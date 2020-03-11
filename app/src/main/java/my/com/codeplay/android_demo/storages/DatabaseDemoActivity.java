@@ -17,8 +17,9 @@ package my.com.codeplay.android_demo.storages;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import my.com.codeplay.android_demo.R;
 
@@ -42,6 +43,7 @@ public class DatabaseDemoActivity extends AppCompatActivity {
 
         database = new DatabaseProvider(this);
         cursor = database.query();
+
         myCursorAdapter = new MyCursorAdapter(this, cursor);
         listView.setAdapter(myCursorAdapter);
     }

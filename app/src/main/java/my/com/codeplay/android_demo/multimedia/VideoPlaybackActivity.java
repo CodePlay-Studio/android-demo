@@ -43,7 +43,7 @@ public class VideoPlaybackActivity extends Activity {
 
 		Uri uri = Uri.parse(RAW_PATH); // Uri.parse(URI_PATH);
 		if (uri!=null) {
-			videoView = (VideoView) findViewById(R.id.VideoView);
+			videoView = findViewById(R.id.VideoView);
 			videoView.setVideoURI(uri);
 			//videoView.setVideoPath(SRC_PATH);
 

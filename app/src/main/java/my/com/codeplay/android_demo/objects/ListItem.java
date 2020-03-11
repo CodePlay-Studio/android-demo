@@ -15,9 +15,9 @@
 
 package my.com.codeplay.android_demo.objects;
 
-import android.support.annotation.DrawableRes;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 
 /**
  * Created by Tham on 05/08/2017.

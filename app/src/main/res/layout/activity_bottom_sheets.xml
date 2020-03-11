@@ -14,7 +14,8 @@
   ~ and limitations under the License.
   -->
 
-<android.support.design.widget.CoordinatorLayout
+<!--<android.support.design.widget.CoordinatorLayout-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -34,13 +35,14 @@
 
     </RelativeLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:behavior_peekHeight="48dp">
+        <!--app:layout_behavior="android.support.design.widget.BottomSheetBehavior"-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +63,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
-                    android:text="@string/persistent_bottom_sheets"/>
+                    android:text="@string/persistent_bottom_sheets" />
 
                 <ImageView
                     android:id="@+id/handle"
@@ -93,6 +95,7 @@
 
         </LinearLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--</android.support.design.widget.CoordinatorLayout>-->

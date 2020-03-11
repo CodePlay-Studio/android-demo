@@ -15,7 +15,7 @@
 
 package my.com.codeplay.android_demo;
 
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 import android.view.View;
 
 /**

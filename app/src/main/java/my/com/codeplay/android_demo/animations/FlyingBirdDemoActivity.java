@@ -18,8 +18,9 @@ package my.com.codeplay.android_demo.animations;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -48,7 +49,8 @@ public class FlyingBirdDemoActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flying_bird_demo);
 
-        animLeftToRight = AnimationUtils.loadAnimation(this, R.anim.bird_fly_left_to_right);
+        animLeftToRight = AnimationUtils
+                .loadAnimation(this, R.anim.bird_fly_left_to_right);
         animLeftToRight.setAnimationListener(this);
 
         animFlyAround = AnimationUtils.loadAnimation(this, R.anim.bird_fly_around);

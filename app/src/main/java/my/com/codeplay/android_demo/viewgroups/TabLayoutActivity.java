@@ -16,12 +16,12 @@
 package my.com.codeplay.android_demo.viewgroups;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import my.com.codeplay.android_demo.R;
 
@@ -41,11 +41,11 @@ public class TabLayoutActivity extends AppCompatActivity {
     }
 
     /**
-     * The {@link android.support.v4.view.PagerAdapter} provides fragments representing each object
-     * in a collection. We use a {@link android.support.v4.app.FragmentPagerAdapter} derivative,
+     * The {@link androidx.viewpager.widget.PagerAdapter} provides fragments representing each object
+     * in a collection. We use a {@link androidx.fragment.app.FragmentPagerAdapter} derivative,
      * which is best navigating between sibling screens representing a fixed, small number of pages.
      *
-     * Use a {@link android.support.v4.app.FragmentStatePagerAdapter} if paging across a collection
+     * Use a {@link androidx.fragment.app.FragmentStatePagerAdapter} if paging across a collection
      * of objects for which the number of pages is undetermined. It destroys and re-create fragments
      * as needed, saving and restoring their state in the process as user navigates to other pages,
      * minimizing memory usage to conserve memory and is a best practice when allowing navigation

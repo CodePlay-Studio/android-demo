@@ -18,12 +18,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import my.com.codeplay.android_demo.R;
 
@@ -111,7 +113,7 @@ public class ThreadsDemoActivity extends AppCompatActivity {
         isAsyncTask = false;
     }
 
-    private class MyAsyncTask extends AsyncTask<Void, Integer, Void> {
+    private class MyAsyncTask extends AsyncTask<Void, Integer, String> {
 
 		@Override
 		protected void onPreExecute() {
@@ -121,10 +123,10 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 		}
 
 		@Override
-		protected Void doInBackground(Void... arg0) {
+		protected String doInBackground(Void... arg0) {
 			while (index<100) {
 				index += 10;
-				this.publishProgress(index);
+				this.publishProgress(index); //progressBar.setProgress(index);
 
 				/*
 				 * the below code stimulates a task which takes 0.5sec
@@ -146,7 +148,7 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 		}
 		
 		@Override
-		protected void onPostExecute(Void result) {
+		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
 
 			isLoading = false;
@@ -156,7 +158,7 @@ public class ThreadsDemoActivity extends AppCompatActivity {
 
     private void show(String msg) {
 		Snackbar snackbar = Snackbar.make(progressBar, msg, Snackbar.LENGTH_LONG);
-		((TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text))
+		((TextView) snackbar.getView().findViewById(com.google.android.material.R.id.snackbar_text))
 				.setTextColor(ContextCompat.getColor(this, android.R.color.white));
 		snackbar.show();
 	}

@@ -16,13 +16,13 @@
 package my.com.codeplay.android_demo.components;
 
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 import android.widget.TextView;
 
@@ -107,19 +107,19 @@ public class ServiceDemoActivity extends AppCompatActivity {
                 Intent mediaPlayerIntent = new Intent(this,
                         MediaPlayerService.class);
                 mediaPlayerIntent.putExtra(MediaPlayerService.EXTRA_SONG_ID, R.raw.mungkin_nanti);
-                //startService(mediaPlayerIntent);
+                startService(mediaPlayerIntent);
 
-                if (isBound) {
+                /*if (isBound) {
                     playerService.playSong();
                 } else {
                     bindService(mediaPlayerIntent,
                             mpServiceConnection, Context.BIND_AUTO_CREATE);
-                }
+                }*/
                 break;
             case R.id.button_stop:
-                //stopService(new Intent(this, MediaPlayerService.class));
+                stopService(new Intent(this, MediaPlayerService.class));
 
-                unbindPlayer();
+                //unbindPlayer();
                 break;
         }
     }

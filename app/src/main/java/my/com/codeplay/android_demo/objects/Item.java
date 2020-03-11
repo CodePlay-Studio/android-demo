@@ -15,8 +15,8 @@
 
 package my.com.codeplay.android_demo.objects;
 
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StringRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.StringRes;
 
 public class Item {
     private int thumbnailId;

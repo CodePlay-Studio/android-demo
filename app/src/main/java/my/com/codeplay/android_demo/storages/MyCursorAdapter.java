@@ -17,12 +17,13 @@ package my.com.codeplay.android_demo.storages;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.support.v4.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.cursoradapter.widget.CursorAdapter;
 
 import my.com.codeplay.android_demo.R;
 import my.com.codeplay.android_demo.viewgroups.ViewHolder;
@@ -61,6 +62,9 @@ public class MyCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         ViewHolder viewHolder = (ViewHolder) view.getTag();
+
+        nameColIndex = cursor.getColumnIndexOrThrow(DatabaseProvider.COL_NAME);
+        imageColIndex = cursor.getColumnIndexOrThrow(DatabaseProvider.COL_IMAGE);
 
         viewHolder.text.setText(cursor.getString(nameColIndex));
         viewHolder.image.setImageResource(cursor.getInt(imageColIndex));

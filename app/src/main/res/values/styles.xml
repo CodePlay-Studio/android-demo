@@ -16,6 +16,10 @@ to be applied on the whole application or an individual Activity. -->
         <!-- <item name="android:textColor">@android:color/primary_text_light</item> -->
     </style>
 
+    <style name="something">
+        <item name="android:textColor">#0000FF</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

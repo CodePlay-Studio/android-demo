@@ -19,9 +19,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Window;
@@ -34,6 +34,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -150,7 +152,7 @@ public class WebViewDemoActivity extends AppCompatActivity {
 	private void showSnackbar(CharSequence msg) {
         Snackbar snackbar = Snackbar.make(etUrl, msg, Snackbar.LENGTH_LONG);
         // custom the message text color, otherwise it is followed the theme text color.
-        ((TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text))
+        ((TextView) snackbar.getView().findViewById(com.google.android.material.R.id.snackbar_text))
                 .setTextColor(ContextCompat.getColor(this, android.R.color.white));
         snackbar.show();
     }

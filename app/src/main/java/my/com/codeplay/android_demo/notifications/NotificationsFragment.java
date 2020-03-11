@@ -29,13 +29,13 @@ import android.media.AudioAttributes;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +44,8 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 
@@ -98,7 +100,9 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
 				if (getView()!=null) {
 					Snackbar snackbar = Snackbar.make(getView(), R.string.snackbar_msg, Snackbar.LENGTH_LONG);
 					// custom the message text color, otherwise it is followed the theme text color.
-					((TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text))
+					/*((TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text))
+							.setTextColor(ContextCompat.getColor(getActivity(), android.R.color.white));*/
+					((TextView) snackbar.getView().findViewById(com.google.android.material.R.id.snackbar_text))
 							.setTextColor(ContextCompat.getColor(getActivity(), android.R.color.white));
 					snackbar.show();
 				}
